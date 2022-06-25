@@ -42,7 +42,7 @@
     <string name="share_summary">Share Sudoku with your friends and family</string>
     <string name="rate_summary">Tell us what you think about Sudoku</string>
     <string name="about_summary">Version 1.0</string>
-    <string name="privacy_summary">OUr Privacy Policy</string>
+    <string name="privacy_summary">Read our Privacy Policy</string>
 
     <!--strings -->
     <string name="market_error">Couldn\'t launch market</string>

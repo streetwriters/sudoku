@@ -14,6 +14,7 @@
             android:screenOrientation="portrait"
             android:name=".Activities.SettingsActivity"
             android:label="@string/title_activity_settings"
+            android:exported="false"
             android:parentActivityName=".Activities.MainActivity">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
@@ -24,6 +25,7 @@
             android:screenOrientation="portrait"
             android:name=".Activities.MainActivity"
             android:label="@string/title_activity_main"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,6 +37,7 @@
             android:screenOrientation="portrait"
             android:name=".Activities.GameActivity"
             android:label="@string/title_activity_main"
+            android:exported="false"
             android:theme="@style/AppTheme.NoActionBar"></activity> <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
