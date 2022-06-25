@@ -41,7 +41,7 @@ public abstract class DialogHelper {
     }
 
     public void setQuitTitle(){
-        builder.setTitle("Quit This Game!!!");
+        builder.setTitle("Quit This Game");
     }
 
     public void setQuitMessage(){
