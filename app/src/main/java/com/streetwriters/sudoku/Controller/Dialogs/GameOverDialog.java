@@ -23,10 +23,10 @@ public class GameOverDialog extends DialogHelper {
         setCustomView();
         setCancel(false);
 
-        setButton(R.id.second_chance, v -> {
-            secondChance();
-            getDialog().dismiss();
-        });
+//        setButton(R.id.second_chance, v -> {
+//            secondChance();
+//            getDialog().dismiss();
+//        });
 
         setButton(R.id.new_game, v -> {
             Stats scoreBoard = new Stats(gameState.getMistakes(), activity, 0);
@@ -42,17 +42,17 @@ public class GameOverDialog extends DialogHelper {
     }
 
     void secondChance() {
-        if (gameState.getmRewardedVideoAd().isLoaded()) {
-            gameState.setGameOverReward(true);
-            gameState.getmRewardedVideoAd().show();
-        } else {
+//        if (gameState.getmRewardedVideoAd().isLoaded()) {
+//            gameState.setGameOverReward(true);
+//            gameState.getmRewardedVideoAd().show();
+//        } else {
             Stats scoreBoard = new Stats(gameState.getMistakes(), activity, 0);
             //LoadData data= new LoadData(activity);
             //data.DeleteSavedPuzzleData();
             new Data().deleteGameFile();
             Toast.makeText(activity, "No Ads to Show", Toast.LENGTH_LONG).show();
             activity.startActivity(new Intent(activity, MainActivity.class));
-        }
+        //}
     }
 
 }

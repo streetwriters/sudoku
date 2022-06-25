@@ -22,7 +22,10 @@ public class HistoryItem implements Serializable {
     }
 
     public String getCellText() {
+        if(cellText!="0")
         return cellText;
+        else
+          return "";
     }
 
     public void setIsNote(boolean note) {
