@@ -67,7 +67,7 @@ public class SettingsActivity extends AppCompatActivity {
 
             Preference privacy = findPreference("privacy");
             privacy.setOnPreferenceClickListener(preference ->{
-                openLink("https://stackoverflow.com/questions/11270591/rate-google-play-application-directly-in-app");
+                openLink("https://streetwriters.co/sudoku/privacy.html");
                 return false;
             });
 

@@ -8,7 +8,7 @@ android {
 
     }
     defaultConfig {
-        applicationId "com.streetwriters.myapplication"
+        applicationId "com.streetwriters.sudoku"
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
