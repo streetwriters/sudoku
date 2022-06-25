@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/option_home"
+        android:orderInCategory="100"
+        android:title="Home"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_home_black_24dp"/>
+    <item
+        android:id="@+id/option_daily_challenge"
+        android:orderInCategory="100"
+        android:title="Daily Challenge"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_trophy"/>
+    <item
+        android:id="@+id/option_stats"
+        android:orderInCategory="100"
+        android:title="Statistics"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_assessment_black_24dp"/>
+</menu>

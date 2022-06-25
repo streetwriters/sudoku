@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Sudoku</string>
+    <string name="title_activity_main">Sudoku</string>
+
+
+    <!-- test ads-->
+    <string name="banner_ad">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="reward_video">ca-app-pub-3940256099942544/5224354917</string>
+
+    <!--Game difficulty-->
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+    <string name="challenge">Challenge</string>
+
+    <!--mistakes-->
+    <string name="mistakes">Mistakes:%1$d/3</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <!--settings -->
+    <string name="title_activity_settings">Settings</string>
+    <string name="share_pref">Share</string>
+    <string name="rate_us_pref">Rate Us</string>
+    <string name="privacy_policy_pref">Privacy Policy</string>
+    <string name="about_us_pref">About Us</string>
+
+    <!--setting summary-->
+    <string name="share_summary">Share Sudoku with your friends and family</string>
+    <string name="rate_summary">Tell us what you think about Sudoku</string>
+    <string name="about_summary">Version 1.0</string>
+    <string name="privacy_summary">OUr Privacy Policy</string>
+
+    <!--strings -->
+    <string name="market_error">Couldn\'t launch market</string>
+
+</resources>

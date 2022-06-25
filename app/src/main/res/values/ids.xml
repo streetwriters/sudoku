@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--grid-->
+    <item name="grid" type="id"/>
+
+<!--note-->
+    <item name="note" type="id"/>
+    <!--cell-->
+    <item name="cell" type="id"/>
+
+    <!--bottom layout-->
+    <item name="bottom_layout" type="id"/>
+
+    <!--NumPad-->
+    <item name="num_1" type="id"/>
+    <item name="num_2" type="id"/>
+    <item name="num_3" type="id"/>
+    <item name="num_4" type="id"/>
+    <item name="num_5" type="id"/>
+    <item name="num_6" type="id"/>
+    <item name="num_7" type="id"/>
+    <item name="num_8" type="id"/>
+    <item name="num_9" type="id"/>
+    <item name="numpad" type="id"/>
+
+    <!--EditPad-->
+    <item name="edit_pad" type="id"/>
+    <item name="undo" type="id"/>
+    <item name="erase" type="id"/>
+    <item name="take_notes" type="id"/>
+    <item name="hint" type="id"/>
+
+    <!-- noteTextView-->
+    <item name="note_1" type="id"/>
+    <item name="note_2" type="id"/>
+    <item name="note_3" type="id"/>
+    <item name="note_4" type="id"/>
+    <item name="note_5" type="id"/>
+    <item name="note_6" type="id"/>
+    <item name="note_7" type="id"/>
+    <item name="note_8" type="id"/>
+    <item name="note_9" type="id"/>
+</resources>

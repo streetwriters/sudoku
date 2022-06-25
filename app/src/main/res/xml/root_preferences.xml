@@ -1,0 +1,24 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <PreferenceCategory >
+
+        <Preference
+            app:key="share"
+            app:title="@string/share_pref"
+            app:summary="@string/share_summary"/>
+        <Preference
+            app:key="rate"
+            app:title="@string/rate_us_pref"
+            app:summary="@string/rate_summary"/>
+        <Preference
+            app:key="privacy"
+            app:title="@string/privacy_policy_pref"
+            app:summary="@string/privacy_summary"/>
+        <Preference
+            app:key="about"
+            app:title="@string/about_us_pref"
+            app:summary="@string/about_summary"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>
