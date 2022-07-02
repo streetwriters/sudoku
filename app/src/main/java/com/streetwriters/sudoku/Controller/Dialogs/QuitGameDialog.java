@@ -3,7 +3,7 @@ package com.streetwriters.sudoku.Controller.Dialogs;
 import android.app.Activity;
 import android.content.Intent;
 
-import com.streetwriters.sudoku.Controller.Game;
+import com.streetwriters.sudoku.Controller.Play;
 import com.streetwriters.sudoku.Functions.Utils.Singletons.LoadGameState;
 import com.streetwriters.sudoku.Functions.SudukoTimer;
 import com.streetwriters.sudoku.Activities.MainActivity;
@@ -17,7 +17,7 @@ public class QuitGameDialog extends DialogHelper {
         this.activity = activity;
     }
 
-    public void Show(Game pauseAndPlay, SudukoTimer sudukoTimer) {
+    public void Show(Play pauseAndPlay, SudukoTimer sudukoTimer) {
         setQuitMessage();
         setQuitTitle();
         setCancel(false);

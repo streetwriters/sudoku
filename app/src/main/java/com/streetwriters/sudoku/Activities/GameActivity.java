@@ -12,7 +12,7 @@ import androidx.core.content.ContextCompat;
 
 import com.streetwriters.sudoku.R;
 import com.streetwriters.sudoku.Controller.Dialogs.QuitGameDialog;
-import com.streetwriters.sudoku.Controller.Game;
+import com.streetwriters.sudoku.Controller.Play;
 import com.streetwriters.sudoku.Controller.GameController;
 import com.streetwriters.sudoku.Functions.SudukoTimer;
 import com.streetwriters.sudoku.Functions.Utils.Singletons.GameState;
@@ -30,7 +30,7 @@ public class GameActivity extends AppCompatActivity {
 
     GameController gameController;
     SudukoTimer sudukoTimer;
-    Game pauseAndPlay;
+    Play pauseAndPlay;
     GameState gameState = GameState.getInstance();
 
     @Override
@@ -46,7 +46,7 @@ public class GameActivity extends AppCompatActivity {
         toolbar.setOverflowIcon(drawable);
 
 
-        pauseAndPlay = new Game(this);
+        pauseAndPlay = new Play(this);
         sudukoTimer = new SudukoTimer();
         sudukoTimer.startTimer(this);
 

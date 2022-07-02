@@ -1,6 +1,7 @@
 package com.streetwriters.sudoku.Functions.Utils.Singletons;
 
 import android.app.Activity;
+import android.util.Log;
 
 import com.streetwriters.sudoku.Functions.InitializeArrays;
 import com.streetwriters.sudoku.Functions.CellGroups;
@@ -8,6 +9,9 @@ import com.streetwriters.sudoku.Functions.FetchData.Data;
 import com.streetwriters.sudoku.Functions.Objects.ResumePuzzle;
 import com.streetwriters.sudoku.Functions.Utils.RandomNum;
 import com.streetwriters.sudoku.R;
+
+import java.util.Calendar;
+import java.util.Date;
 
 import test1.sudukoSolvedRiddle;
 
@@ -57,7 +61,7 @@ public class LoadGameState {
         gameState.setRows(cellGroups.getRows());
         gameState.setBoxes(cellGroups.getBoxes());
         gameState.setMatchingCells(cellGroups.getMatchingCells());
-
+        gameState.setStartTime(System.currentTimeMillis());
     }
 
     public void setChallengeGameData() {
@@ -89,6 +93,7 @@ public class LoadGameState {
         gameState.setUserHistory(resumePuzzle.getUserHistory());
         gameState.setMatchingCells(resumePuzzle.getNumberOccurencesList());
         gameState.setDifficulty(resumePuzzle.getDifficulty());
+        gameState.setStartTime(resumePuzzle.getStartTime());
         CellGroups cellGroups = new CellGroups();
         gameState.setColumns(cellGroups.getColumns());
         gameState.setRows(cellGroups.getRows());
@@ -107,6 +112,7 @@ public class LoadGameState {
         resumePuzzle.setBoardButtonNotes(gameState.getNotes());
         resumePuzzle.setUserHistory(gameState.getUserHistory());
         resumePuzzle.setNumberOccurencesList(gameState.getMatchingCells());
+        resumePuzzle.setStartTime(gameState.getStartTime());
         Data data = new Data();
         data.saveGameFile(resumePuzzle);
     }

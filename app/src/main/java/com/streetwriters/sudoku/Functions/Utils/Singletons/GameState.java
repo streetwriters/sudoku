@@ -30,6 +30,7 @@ public class GameState {
     private ArrayList<Integer>[][] notes = new ArrayList[9][9]; //initialize
     private Boolean isLastScreenResume= false;
     private String difficulty;
+    private long startTime;
 
     private GameState(){
     }
@@ -213,6 +214,14 @@ public class GameState {
 
     public Boolean getIsLastScreenResume() {
         return isLastScreenResume;
+    }
+
+    public void setStartTime(long startTime) {
+        this.startTime = startTime;
+    }
+
+    public long getStartTime() {
+        return startTime;
     }
 
     public void resetSingleton(){

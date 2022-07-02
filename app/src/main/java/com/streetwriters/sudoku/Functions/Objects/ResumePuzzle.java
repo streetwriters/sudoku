@@ -10,6 +10,7 @@ public class ResumePuzzle implements Serializable {
     String difficulty;
     int timer;
     int mistakes;
+    long startTime;
     ArrayList<Integer>[][] boardButtonNotes;
     ArrayList<HistoryItem>  userHistory;
     ArrayList<Integer>[] numberOccurencesList;
@@ -85,5 +86,13 @@ public class ResumePuzzle implements Serializable {
 
     public void setNumberOccurencesList(ArrayList<Integer>[] numberOccurencesList) {
         this.numberOccurencesList = numberOccurencesList;
+    }
+
+    public long getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(long startTime) {
+        this.startTime = startTime;
     }
 }

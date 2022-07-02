@@ -43,11 +43,11 @@ public abstract class ButtonOnClick extends UseGameState implements View.OnClick
         }
     }
 
-    public void eraseNote(Integer noteTextId) {
+    public void eraseNote(Integer noteText) {
         CellLayout cellLayout = new CellLayout(context, gameState.getActiveCellId());
         if (gameState.getActiveCellId()>-1) {
-            cellLayout.eraseNote(noteTextId);
-            removeActiveNoteIndex(noteTextId);
+            cellLayout.eraseNote(noteText);
+            removeActiveNoteElement(noteText);
         }
     }
 

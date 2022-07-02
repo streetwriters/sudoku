@@ -4,40 +4,37 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
-import android.widget.TextView;
 
-import com.streetwriters.sudoku.R;
+import com.streetwriters.sudoku.Functions.FetchData.Data;
+import com.streetwriters.sudoku.Functions.Utils.Singletons.GameState;
 import com.streetwriters.sudoku.Functions.Objects.DailyChallengeClass;
-import com.streetwriters.sudoku.Functions.Objects.Games;
+import com.streetwriters.sudoku.Functions.Objects.Game;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class Stats {
     int noOfMistakes;
     Activity activity;
     int TOATL_SCORE = 88;
-    Games games;
+    Game game;
     int result;
+    GameState gameState = GameState.getInstance();
 
     public Stats(int noOfMistakes, Activity activity, int result) {
         this.activity = activity;
         this.noOfMistakes = noOfMistakes;
         this.result = result;
-        games = new Games();
-        games.setDifficulty(getGameDifficulty());
-        games.setGameNo(getGameNumber());
-        games.setMistakes(noOfMistakes);
-        games.setResult(result);
-        games.setScore(getTotalScore());
-        games.setTime(getTimeinMinutes());
+        game = new Game();
+        game.setDifficulty(getGameDifficulty());
+        game.setGameNo(getGameNumber());
+        game.setMistakes(noOfMistakes);
+        game.setResult(result);
+        game.setScore(getTotalScore());
+        game.setTime(getTimeinMinutes());
+        game.setStartTime(gameState.getStartTime());
 
         if (getGameDifficulty() == 4) {
-            games.setDailyChallengeClass(getDailyChallengeClass());
+            game.setDailyChallengeClass(getDailyChallengeClass());
         }
 
         saveStats();
@@ -48,13 +45,8 @@ public class Stats {
         return Score;
     }
 
-    public int getTimeinMinutes() { //gamestate.timer instead of textview
-        String timer = ((TextView)activity.findViewById(R.id.timer)).getText().toString();
-        String[] hourMin = timer.split(":");
-        int hour = Integer.parseInt(hourMin[0]);
-        int mins = Integer.parseInt(hourMin[1]);
-        int hoursInMins = hour * 60;
-        return hoursInMins + mins;
+    public int getTimeinMinutes() {
+        return gameState.getGameTimer()/60;
     }
 
     public int getGameNumber() {// addition of games no should not be done here
@@ -83,35 +75,13 @@ public class Stats {
     }
 
     public void saveStats() { //saving of file should be done assets
-        try {
-            File path = activity.getFilesDir();
-            File file = new File(path, "main.dat");
-            ArrayList<Games> GamesList = new ArrayList<>();
+        ArrayList<Game> gameList = new Data().getGameStats();
+        gameList.add(game);
+        new Data().setGameStats(gameList);
 
-            try {
-                FileInputStream fis = new FileInputStream(file);
-                ObjectInputStream ois = new ObjectInputStream(fis);
-                GamesList = (ArrayList<Games>) ois.readObject();
-                ois.close();
-            } catch (Exception e) {
-                Log.d("test", e.getMessage());
-            }
-
-            //Log.d("test","testing"+getContext().getFilesDir());
-            //Log.d("test","Day\t"+testDailyChallenge.getDay()+"\tMonth\t"+testDailyChallenge.getMonth()+"\tYear\t"+testDailyChallenge.getYear());
-            GamesList.add(games);
-            FileOutputStream fos = new FileOutputStream(file);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(GamesList);
-            oos.close();
-
-            for (int index = 0; index < GamesList.size(); index++) {
-                Log.d("test", "Difficulty:" + GamesList.get(index).getDifficulty() + "\nGame NO:" + GamesList.get(index).getGameNo() + "\nMistakes: " + GamesList.get(index).getMistakes() + "\nGameResult:" + GamesList.get(index).getResult()
-                        + "\nScore: " + GamesList.get(index).getScore() + "\nTime: " + GamesList.get(index).getTime());
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            Log.d("test", e.getMessage());
+        for (int index = 0; index < gameList.size(); index++) {
+            Log.d("test", "Difficulty:" + gameList.get(index).getDifficulty() + "\nGame NO:" + gameList.get(index).getGameNo() + "\nMistakes: " + gameList.get(index).getMistakes() + "\nGameResult:" + gameList.get(index).getResult()
+                    + "\nScore: " + gameList.get(index).getScore() + "\nTime: " + gameList.get(index).getTime());
         }
     }
 }

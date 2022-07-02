@@ -9,10 +9,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
@@ -40,7 +40,7 @@ public class HomeFragment extends Fragment {
 
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("");
         ConstraintLayout constraintLayout = view.findViewById(R.id.home_fragment);
-        Button mainGameBtn = view.findViewById(R.id.main_new_game);
+        AppCompatButton mainGameBtn = view.findViewById(R.id.main_new_game);
         registerForContextMenu(mainGameBtn);
 
         mainGameBtn.setOnClickListener((View) -> {
@@ -48,10 +48,11 @@ public class HomeFragment extends Fragment {
         });
 
         mainGameBtn.setOnLongClickListener(view1 -> true);
-        Button resumeBtn = view.findViewById(R.id.main_resume_game);
+        AppCompatButton resumeBtn = view.findViewById(R.id.main_resume_game);
 
         try {
-            ResumePuzzle resumePuzzle = new Data().loadGameFile();
+            ResumePuzzle resumePuzzle = new Data().isResumeFilePresent();
+
             resumeBtn.setVisibility(View.VISIBLE);
             resumeBtn.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.streetwriters.sudoku.Activities.GameActivity;
 import com.streetwriters.sudoku.Functions.Objects.DailyChallengeClass;
-import com.streetwriters.sudoku.Functions.Objects.Games;
+import com.streetwriters.sudoku.Functions.Objects.Game;
 import com.streetwriters.sudoku.Functions.Utils.Dimensions;
 import com.streetwriters.sudoku.R;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
@@ -43,7 +43,7 @@ public class TrophyFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    ArrayList<Games> GamesList = new ArrayList<>();
+    ArrayList<Game> gameList = new ArrayList<>();
     int challengeCompleted = 0;
     MaterialCalendarView materialCalendarView;
 
@@ -74,7 +74,7 @@ public class TrophyFragment extends Fragment {
             File file = new File(path, "main.dat");
             InputStream fis = new FileInputStream(file);
             ObjectInputStream ois = new ObjectInputStream(fis);
-            GamesList = (ArrayList<Games>) ois.readObject();
+            gameList = (ArrayList<Game>) ois.readObject();
             ois.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -110,11 +110,11 @@ public class TrophyFragment extends Fragment {
 
 
     private void setTitleAndChallengesEachMonth(View view) {
-        for (int index = 0; index < GamesList.size(); index++) {
-            if (GamesList.get(index).getDifficulty() == 4) {
+        for (int index = 0; index < gameList.size(); index++) {
+            if (gameList.get(index).getDifficulty() == 4) {
                 int CurrentMonth = Calendar.getInstance().get(Calendar.MONTH) + 1;
                 int CurrentYear = materialCalendarView.getCurrentDate().getYear();
-                DailyChallengeClass dailyChallengeClass = GamesList.get(index).getDailyChallengeClass();
+                DailyChallengeClass dailyChallengeClass = gameList.get(index).getDailyChallengeClass();
                 if ((dailyChallengeClass.getYear() == CurrentYear) && (dailyChallengeClass.getMonth() == CurrentMonth)) {
                     challengeCompleted++;
                 }
@@ -138,9 +138,9 @@ public class TrophyFragment extends Fragment {
                         " " + materialCalendarView.getCurrentDate().getYear());
                 challengeCompleted = 0;
 
-                for (int index = 0; index < GamesList.size(); index++) {
-                    if (GamesList.get(index).getDifficulty() == 4) {
-                        DailyChallengeClass dailyChallengeClass = GamesList.get(index).getDailyChallengeClass();
+                for (int index = 0; index < gameList.size(); index++) {
+                    if (gameList.get(index).getDifficulty() == 4) {
+                        DailyChallengeClass dailyChallengeClass = gameList.get(index).getDailyChallengeClass();
                         if ((dailyChallengeClass.getYear() == date.getYear()) && (dailyChallengeClass.getMonth() == date.getMonth())) {
                             challengeCompleted++;
                         }
@@ -175,9 +175,9 @@ public class TrophyFragment extends Fragment {
                 intent.putExtra("month", materialCalendarView.getSelectedDate().getMonth());
                 intent.putExtra("day", materialCalendarView.getSelectedDate().getDay());
 
-                for (int index = 0; index < GamesList.size(); index++) {
-                    if (GamesList.get(index).getDifficulty() == 4) {
-                        DailyChallengeClass dailyChallengeClass = GamesList.get(index).getDailyChallengeClass();
+                for (int index = 0; index < gameList.size(); index++) {
+                    if (gameList.get(index).getDifficulty() == 4) {
+                        DailyChallengeClass dailyChallengeClass = gameList.get(index).getDailyChallengeClass();
                         if ((dailyChallengeClass.getDay() == day) && (dailyChallengeClass.getMonth() == month) && (dailyChallengeClass.getYear() == year)) {
                             Toast.makeText(getContext(), "You have already Completed this challenge", Toast.LENGTH_LONG).show();
                             challengeCompleted = true;

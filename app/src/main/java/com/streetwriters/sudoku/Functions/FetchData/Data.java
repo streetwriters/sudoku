@@ -2,7 +2,7 @@ package com.streetwriters.sudoku.Functions.FetchData;
 
 import android.util.Log;
 
-import com.streetwriters.sudoku.Functions.Objects.Games;
+import com.streetwriters.sudoku.Functions.Objects.Game;
 import com.streetwriters.sudoku.Functions.Objects.ResumePuzzle;
 import com.streetwriters.sudoku.Functions.Utils.RandomNum;
 
@@ -41,6 +41,11 @@ public class Data extends Files {
         return resumePuzzle;
     }
 
+     public ResumePuzzle isResumeFilePresent() throws Exception {
+         ResumePuzzle resumePuzzle = (ResumePuzzle)load(RESUME_FILE);
+         return resumePuzzle;
+     }
+
     public void saveGameFile(ResumePuzzle resumePuzzle){
         try {
             save(resumePuzzle,RESUME_FILE);
@@ -57,16 +62,24 @@ public class Data extends Files {
         }
     }
 
-    public ArrayList<Games> getGameStats(){
-        ArrayList<Games> GamesList = new ArrayList<>();
+    public ArrayList<Game> getGameStats(){
+        ArrayList<Game> gameList = new ArrayList<>();
 
         try {
-            GamesList = (ArrayList<Games>)load(GAME_STATS);
+            gameList = (ArrayList<Game>)load(GAME_STATS);
         }catch (Exception e){
             Log.d("ASSETS", "getGameStats: "+e.getMessage());
         }
 
-        return GamesList;
+        return gameList;
+    }
+
+    public void setGameStats(ArrayList<Game> gameList){
+        try {
+            save(gameList,GAME_STATS);
+        }catch (Exception e){
+            Log.d("ASSETS", "setGameStats: "+e.getMessage());
+        }
     }
 
     private sudukoSolvedRiddle getRiddle(String filename){
