@@ -35,6 +35,6 @@
     </style>
 
     <style name="CustomTextAppearance" parent="TextAppearance.MaterialCalendarWidget.Date">
-        <item name="android:textColor">@color/mcv_text_date_dark</item>
+        <item name="android:textColor">@drawable/calender_button</item>
     </style>
 </resources>

@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable/active_button.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/background.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable/calender_button.xml" value="0.163" />
         <entry key="app/src/main/res/drawable/circle.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/editing_button_bakcground.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/ic_advertising.xml" value="0.1295" />
@@ -45,8 +46,11 @@
         <entry key="app/src/main/res/drawable/static_button.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/suduko_square_background.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/unselected_button.xml" value="0.1295" />
+        <entry key="app/src/main/res/layout/calander_day_layout.xml" value="0.25317028985507245" />
+        <entry key="app/src/main/res/layout/content_game.xml" value="0.25317028985507245" />
         <entry key="app/src/main/res/layout/home_fragment.xml" value="0.11875" />
         <entry key="app/src/main/res/layout/settings_activity.xml" value="0.14635416666666667" />
+        <entry key="app/src/main/res/layout/trophy_fragment.xml" value="0.25317028985507245" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1295" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1295" />
         <entry key="app/src/main/res/xml/root_preferences.xml" value="0.12552083333333333" />

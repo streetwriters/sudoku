@@ -56,51 +56,63 @@ public class GamesWon {
     }
 
     public double winRate() {
-        return Double.isNaN(gamesWon / gamesStarted) ? 0 : gamesWon / gamesStarted;
+        if (gamesStarted != 0)
+            return gamesWon / gamesStarted;
+        else
+            return 0;
     }
 
     public double averageTime() {
         if (gamesWon != 0)
-            return Double.isNaN(gamesWonTime / gamesWon) ? 0 : gamesWonTime / gamesWon;
+            return gamesWonTime / gamesWon;
         else
             return 0;
     }
 
     public double averageScore() {
-        return Double.isNaN(totalScore / gamesWon) ? 0 : (totalScore / gamesWon);
+        if (gamesWon != 0)
+            return (totalScore / gamesWon);
+        else
+            return 0;
     }
 
     public double weeklyWinRate() {
-        int GamesStartedLastWeek = 0;
-        int GamesWonLastWeek = 0;
+        int gamesStartedLastWeek = 0;
+        int gamesWonLastWeek = 0;
 
         for (int index = (gameList.size() - 1); index > -1; index--) {
-            GamesStartedLastWeek++;
+            gamesStartedLastWeek++;
             if (gameList.get(index).getResult() == 1) {
-                GamesWonLastWeek++;
+                gamesWonLastWeek++;
             }
-            if (GamesStartedLastWeek == 7) {
+            if (gameList.get(index).getStartDate() < getWeekLimit()) {
                 break;
             }
         }
-        return Double.isNaN(GamesWonLastWeek / GamesStartedLastWeek) ? 0 : (GamesWonLastWeek / GamesStartedLastWeek);
+        if (gamesStartedLastWeek != 0)
+            return (gamesWonLastWeek / gamesStartedLastWeek);
+        else
+            return 0;
     }
 
     public int gamesStarted() {
         return gamesStarted;
     }
 
-    public void getWeekLimit(){
-        int days = (int)TimeUnit.MILLISECONDS.toDays(gameList.get(gameList.size()-1).getStartDate());
-        long lastWeekLimit = TimeUnit.DAYS.toMillis(days-7);;
+    public long getWeekLimit() {
+        int days = (int) TimeUnit.MILLISECONDS.toDays(gameList.get(gameList.size() - 1).getStartDate());
+        long weekLimit = TimeUnit.DAYS.toMillis(days - 7);
+
 
         for (int index = (gameList.size() - 1); index > -1; index--) {
 
-            if(gameList.get(index).getStartDate()>=lastWeekLimit){
-                Log.d(GamesWon.class.getSimpleName(), "getWeekLimit: "+gameList.get(index).getStartDate());
-            }else{
+            if (gameList.get(index).getStartDate() >= weekLimit) {
+                Log.d(GamesWon.class.getSimpleName(), "getWeekLimit: " + gameList.get(index).getStartDate());
+            } else {
                 break;
             }
         }
+
+        return weekLimit;
     }
 }
