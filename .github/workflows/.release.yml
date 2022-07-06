@@ -35,6 +35,17 @@ jobs:
           keyStorePassword: ${{ secrets.PASSWORD }}
           keyPassword: ${{ secrets.PASSWORD }}
 
+      - name: Deploy to Play Store
+        id: deploy
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
+          packageName: com.streetwriters.sudoku
+          releaseFile: ${{steps.sign_app.outputs.signedReleaseFile}}
+          track: production
+          status: completed
+          whatsNewDirectory: releasenotes/
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
