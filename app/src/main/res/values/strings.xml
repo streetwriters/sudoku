@@ -46,5 +46,20 @@
 
     <!--strings -->
     <string name="market_error">Couldn\'t launch market</string>
+    <string name="title_activity_help">How To Play</string>
+    <string name="help_text">
+        "Sudoku is a puzzle game in which you have to fill a 9 × 9 grid with digits so"
+        "that each column, each row, and each of the nine 3 × 3 squares that compose the grid"
+        "contain all of the digits from 1 to 9."
+        "The puzzle setter provides a partially completed grid"
+        "which has one solution.\n\n"
+
+        "You can use notes to make your guess.\n"
+        "You can use hints in solving difficult parts of the puzzle.\n"
+    </string>
+    <string name="action_settings">Settings</string>
+
+    <!--help_activity-->
+    <string name="menu_help">How to play</string>
 
 </resources>

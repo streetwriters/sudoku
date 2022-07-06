@@ -22,20 +22,17 @@ public class GameOverDialog extends DialogHelper {
         setLayout(R.layout.dialog_layout);
         setCustomView();
         setCancel(false);
-
+        Stats scoreBoard = new Stats(gameState.getMistakes(), activity, 0);
+        new Data().deleteGameFile();
+        gameState.setGameFinished(true);
 //        setButton(R.id.second_chance, v -> {
 //            secondChance();
 //            getDialog().dismiss();
 //        });
 
         setButton(R.id.new_game, v -> {
-            Stats scoreBoard = new Stats(gameState.getMistakes(), activity, 0);
-            //LoadData data= new LoadData(activity);
-            //data.DeleteSavedPuzzleData();
-            new Data().deleteGameFile();
             new DifficultyDialog(activity).Show();
             getDialog().dismiss();
-
         });
 
         getDialog().show();

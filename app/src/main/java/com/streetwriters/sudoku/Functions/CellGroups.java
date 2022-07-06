@@ -1,5 +1,7 @@
 package com.streetwriters.sudoku.Functions;
 
+import android.util.Log;
+
 import com.streetwriters.sudoku.Functions.Utils.Singletons.GameState;
 import com.streetwriters.sudoku.Functions.Utils.Singletons.UseGameState;
 
@@ -20,6 +22,7 @@ public class CellGroups extends UseGameState {
                 for (int k = 0; k <3 ; k++) {
                     for (int l = 0; l < 3; l++) {
                         if(!isClue(row[i]+l,col[j]+k)) {
+                            //Log.d(CellGroups.class.getSimpleName(), "getBoxes: "+i+""+j);
                             square.add(Integer.parseInt((row[i] + l) + "" + (col[j] + k)));
                         }
                     }
@@ -38,7 +41,8 @@ public class CellGroups extends UseGameState {
         for(int i=0;i<9;i++){
             ArrayList<Integer> column= new ArrayList<>();
             for(int j=0;j<9;j++){
-                if (!isClue(i,j)) {
+                if (!isClue(j,i)) {
+                    //Log.d(CellGroups.class.getSimpleName(), "getColumns: "+i+""+j+" isClue: "+isClue(i,j));
                     column.add(Integer.parseInt(j + "" + i));
                 }//if state
             }//inner for loop
@@ -55,6 +59,7 @@ public class CellGroups extends UseGameState {
             ArrayList<Integer> row= new ArrayList<>();
             for(int j=0;j<9;j++){
                 if (!isClue(i,j)) {
+                    //Log.d(CellGroups.class.getSimpleName(), "getRows: "+i+""+j);
                     row.add(Integer.parseInt(i + "" + j));
                 }//if state
             }//inner for loop

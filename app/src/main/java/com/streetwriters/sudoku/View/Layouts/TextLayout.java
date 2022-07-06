@@ -19,7 +19,7 @@ public class TextLayout {
 
     public void arrange(){
         setDifficulty();
-        setMistakes(0);
+        setMistakes(gameState.getMistakes());
     }
 
     public void setDifficulty(){

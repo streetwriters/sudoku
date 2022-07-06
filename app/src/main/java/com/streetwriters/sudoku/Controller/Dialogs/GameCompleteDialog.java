@@ -21,9 +21,10 @@ public class GameCompleteDialog extends DialogHelper {
 
     public void Show() {
         setLayout(R.layout.game_won);
+        gameState.setGameFinished(true);
 
         setButton(R.id.main_page, view -> {
-            gameState.resetSingleton();
+            //gameState.resetSingleton();
             activity.startActivity(new Intent(activity, MainActivity.class));
         });
 

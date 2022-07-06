@@ -53,6 +53,6 @@ public class DifficultyDialog extends DialogHelper {
     }
 
     private void reset() {
-        gameState.resetSingleton();
+        //gameState.resetSingleton();
     }
 }

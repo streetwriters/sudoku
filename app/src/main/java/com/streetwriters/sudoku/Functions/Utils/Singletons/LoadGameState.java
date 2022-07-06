@@ -1,7 +1,6 @@
 package com.streetwriters.sudoku.Functions.Utils.Singletons;
 
 import android.app.Activity;
-import android.util.Log;
 
 import com.streetwriters.sudoku.Functions.InitializeArrays;
 import com.streetwriters.sudoku.Functions.CellGroups;
@@ -10,8 +9,7 @@ import com.streetwriters.sudoku.Functions.Objects.ResumePuzzle;
 import com.streetwriters.sudoku.Functions.Utils.RandomNum;
 import com.streetwriters.sudoku.R;
 
-import java.util.Calendar;
-import java.util.Date;
+import java.util.ArrayList;
 
 import test1.sudukoSolvedRiddle;
 
@@ -45,16 +43,25 @@ public class LoadGameState {
         }
     }
 
-    private int getGameDifficulty() {
+    public int getGameDifficulty() {
         return activity.getIntent().getIntExtra("difficulty", 0);
     }
 
     public void setGameData(sudukoSolvedRiddle riddle, String difficulty) {
+        gameState.setActiveCellId(-1);
         gameState.setSolvedPuzzle(riddle.getMatrix());
         gameState.setUnSolvedPuzzle(riddle.getRiddle());
         gameState.setAlertDialogPresent(true);
         gameState.setDifficulty(difficulty);
+        gameState.setMistakes(0);
+        gameState.setGameTimer(0);
+        gameState.setUserHistory(new ArrayList<>());
+        gameState.setHintsUsed(0);
         gameState.setNotes(new InitializeArrays().getNotes());
+        gameState.setIsTakingNotes(false);
+        gameState.setHighlightedCells(new ArrayList[2]);
+        gameState.setActiveMatchingCells(new ArrayList<>());
+        gameState.setGameFinished(false);
         CellGroups cellGroups = new CellGroups();
         gameState.setUserSolvedPuzzle(cellGroups.getUserSolvedPuzzle(riddle.getRiddle()));
         gameState.setColumns(cellGroups.getColumns());
@@ -81,8 +88,8 @@ public class LoadGameState {
     public void loadSavedGame() {
         Data data = new Data();
         ResumePuzzle resumePuzzle = data.loadGameFile();
-
         gameState.setAlertDialogPresent(true);
+        gameState.setActiveCellId(-1);
         gameState.setSolvedPuzzle(resumePuzzle.getMatrix());
         gameState.setUnSolvedPuzzle(resumePuzzle.getRiddle());
         gameState.setUserSolvedPuzzle(resumePuzzle.getSolved());
@@ -94,6 +101,10 @@ public class LoadGameState {
         gameState.setMatchingCells(resumePuzzle.getNumberOccurencesList());
         gameState.setDifficulty(resumePuzzle.getDifficulty());
         gameState.setStartTime(resumePuzzle.getStartTime());
+        gameState.setIsTakingNotes(false);
+        gameState.setHighlightedCells(new ArrayList[2]);
+        gameState.setActiveMatchingCells(new ArrayList<>());
+        gameState.setGameFinished(false);
         CellGroups cellGroups = new CellGroups();
         gameState.setColumns(cellGroups.getColumns());
         gameState.setRows(cellGroups.getRows());
@@ -115,6 +126,7 @@ public class LoadGameState {
         resumePuzzle.setStartTime(gameState.getStartTime());
         Data data = new Data();
         data.saveGameFile(resumePuzzle);
+        //gameState.resetSingleton();
     }
 }
 

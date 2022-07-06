@@ -3,12 +3,14 @@ package com.streetwriters.sudoku.Activities.Fragments;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +19,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import com.streetwriters.sudoku.Activities.GameActivity;
+import com.streetwriters.sudoku.Activities.Help;
 import com.streetwriters.sudoku.Functions.FetchData.Data;
 import com.streetwriters.sudoku.Functions.Objects.ResumePuzzle;
 import com.streetwriters.sudoku.R;
@@ -39,7 +42,7 @@ public class HomeFragment extends Fragment {
         final View view = inflater.inflate(R.layout.home_fragment, container, false);
 
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("");
-        ConstraintLayout constraintLayout = view.findViewById(R.id.home_fragment);
+        LinearLayout linearLayout = view.findViewById(R.id.home_fragment);
         AppCompatButton mainGameBtn = view.findViewById(R.id.main_new_game);
         registerForContextMenu(mainGameBtn);
 
@@ -52,6 +55,7 @@ public class HomeFragment extends Fragment {
 
         try {
             ResumePuzzle resumePuzzle = new Data().isResumeFilePresent();
+            Log.d(HomeFragment.class.getSimpleName(), "onCreateView: "+resumePuzzle);
 
             resumeBtn.setVisibility(View.VISIBLE);
             resumeBtn.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +70,15 @@ public class HomeFragment extends Fragment {
             e.printStackTrace();
             resumeBtn.setVisibility(View.GONE);
         }
+
+        AppCompatButton helpButton = view.findViewById(R.id.main_help);
+
+        helpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(activity, Help.class));
+            }
+        });
 
         return view;
     }

@@ -31,6 +31,7 @@ public class GameState {
     private Boolean isLastScreenResume= false;
     private String difficulty;
     private long startTime;
+    private Boolean gameFinished = false;
 
     private GameState(){
     }
@@ -214,6 +215,14 @@ public class GameState {
 
     public Boolean getIsLastScreenResume() {
         return isLastScreenResume;
+    }
+
+    public void setGameFinished(Boolean gameFinished) {
+        this.gameFinished = gameFinished;
+    }
+
+    public Boolean isGameFinished() {
+        return gameFinished;
     }
 
     public void setStartTime(long startTime) {

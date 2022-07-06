@@ -57,6 +57,7 @@ public class Data extends Files {
     public void deleteGameFile(){
         try {
             delete(RESUME_FILE);
+            Log.d("Data", "deleteGameFile: "+isResumeFilePresent());
         }catch (Exception e){
             Log.d("Data", "setResumePuzzle: "+e.getMessage());
         }

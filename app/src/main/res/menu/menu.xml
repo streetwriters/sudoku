@@ -7,4 +7,10 @@
         android:orderInCategory="100"
         android:title="pauseplay"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_help"
+        android:icon="@drawable/ic_baseline_help_24"
+        android:orderInCategory="100"
+        android:title="@string/menu_help"
+        app:showAsAction="always" />
 </menu>

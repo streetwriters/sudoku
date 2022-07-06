@@ -56,7 +56,7 @@ public class Highlight {
 
     private void removeHighlight() {
         int activeCell = gameState.getActiveCellId();
-        Log.d(Highlight.class.getSimpleName(), "removeHighlight: id: "+activeCell); //highlight does not work when matching cells
+        //Log.d(Highlight.class.getSimpleName(), "removeHighlight: id: "+activeCell); //highlight does not work when matching cells
 
         if (gameState.getHighlightedCells()[0] != null) {
             CellLayout activeCellLayout = new CellLayout(view.getContext(), activeCell);
@@ -107,7 +107,7 @@ public class Highlight {
         for (int index = 0; index < selectionLength; index++) {
             int cellId = gridGroup.get(index);
             CellLayout cellLayout = new CellLayout(view.getContext(), cellId);
-            //Log.d("Highlight", "highlight: context: " + view.getContext() + " id: " + cellId);
+            //Log.d("Highlight", "highlight:  id: " + cellId);
 
             if (selection.isCellUnselected(cellId)) {
                 cellLayout.setSelectedCellBackground();

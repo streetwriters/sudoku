@@ -32,7 +32,7 @@ public class GameController extends UseGameState {
         bottomLayout.addView(new EditPadLayout(activity).arrange());
         bottomLayout.addView(new NumPadLayout(activity).arrange());
 
-        if (gameState.getIsLastScreenResume()) { // ths should be moved to suduko views
+        if (new LoadGameState(activity).getGameDifficulty()==5) { // ths should be moved to suduko views
             FillCells fillCells = new FillCells();
             fillCells.fill(activity);
             CheckAllErrors();

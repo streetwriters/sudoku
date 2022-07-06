@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.streetwriters.sudoku.Controller.Play;
+import com.streetwriters.sudoku.Controller.Stats;
+import com.streetwriters.sudoku.Functions.FetchData.Data;
 import com.streetwriters.sudoku.Functions.Utils.Singletons.LoadGameState;
 import com.streetwriters.sudoku.Functions.SudukoTimer;
 import com.streetwriters.sudoku.Activities.MainActivity;
@@ -22,9 +24,12 @@ public class QuitGameDialog extends DialogHelper {
         setQuitTitle();
         setCancel(false);
         setQuitPositiveButton((dialog, which) -> {
-            LoadGameState loadGameState = new LoadGameState(activity);
-            loadGameState.saveGame();
-            GameState.getInstance().resetSingleton();
+            //LoadGameState loadGameState = new LoadGameState(activity);
+            //loadGameState.saveGame();
+            //GameState.getInstance().resetSingleton();
+            Stats scoreBoard = new Stats(GameState.getInstance().getMistakes(), activity, 0);
+            new Data().deleteGameFile();
+            GameState.getInstance().setGameFinished(true);
             activity.startActivity(new Intent(activity, MainActivity.class));
         });
 

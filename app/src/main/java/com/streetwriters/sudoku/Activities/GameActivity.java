@@ -1,6 +1,6 @@
 package com.streetwriters.sudoku.Activities;
 
-import android.graphics.drawable.Drawable;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -8,8 +8,8 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 
+import com.streetwriters.sudoku.Functions.Utils.Singletons.LoadGameState;
 import com.streetwriters.sudoku.R;
 import com.streetwriters.sudoku.Controller.Dialogs.QuitGameDialog;
 import com.streetwriters.sudoku.Controller.Play;
@@ -42,8 +42,8 @@ public class GameActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_settings);
-        toolbar.setOverflowIcon(drawable);
+        //Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_settings);
+        //toolbar.setOverflowIcon(drawable);
 
 
         pauseAndPlay = new Play(this);
@@ -82,6 +82,8 @@ public class GameActivity extends AppCompatActivity {
                 pauseAndPlay.onResume();
                 item.setIcon(R.drawable.ic_pause);
             }
+        } else if(id==R.id.menu_help){
+           startActivity(new Intent(this,Help.class));
         }
 
         return super.onOptionsItemSelected(item);
@@ -106,4 +108,14 @@ public class GameActivity extends AppCompatActivity {
         onBackPressed();
         return true;
     }
+
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if (!gameState.isGameFinished() && gameState.getMistakes() < 3) {
+            new LoadGameState(this).saveGame();
+        }
+    }
+
 }

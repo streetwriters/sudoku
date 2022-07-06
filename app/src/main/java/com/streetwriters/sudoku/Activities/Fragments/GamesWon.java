@@ -22,8 +22,6 @@ public class GamesWon {
     }
 
     private void setGamesCompleted() {
-
-
         for (int i = 0; i < gameList.size(); i++) {
             Game game = gameList.get(i);
             gamesStarted++;
@@ -103,9 +101,7 @@ public class GamesWon {
         int days = (int) TimeUnit.MILLISECONDS.toDays(gameList.get(gameList.size() - 1).getStartDate());
         long weekLimit = TimeUnit.DAYS.toMillis(days - 7);
 
-
         for (int index = (gameList.size() - 1); index > -1; index--) {
-
             if (gameList.get(index).getStartDate() >= weekLimit) {
                 Log.d(GamesWon.class.getSimpleName(), "getWeekLimit: " + gameList.get(index).getStartDate());
             } else {
