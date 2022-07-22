@@ -66,10 +66,24 @@ public abstract class ButtonOnClick extends UseGameState implements View.OnClick
         cellLayout.setCellText(Integer.toString(text));
         new CellGroups().addMatchingCell(text, gameState.getActiveCellId());
         gameState.updateUserSolvedPuzzle(text);
+//        CheckErrors checkErrors = new CheckErrors();
+//        checkErrors.check((Activity) context);
+//        GameCompletion completion = new GameCompletion();
+//        if (completion.isGameWon()) {
+//            GameCompleteDialog dialog = new GameCompleteDialog((Activity) context);
+//            dialog.Show();
+//        }
+        checkErrors();
+        checkGameCompletion();
+    }
+
+    void checkErrors(){
         CheckErrors checkErrors = new CheckErrors();
         checkErrors.check((Activity) context);
+    }
+
+    void checkGameCompletion(){
         GameCompletion completion = new GameCompletion();
-        //Log.d("TEST", "OnClick: isGameWOn: " + completion.isGameWon());
         if (completion.isGameWon()) {
             GameCompleteDialog dialog = new GameCompleteDialog((Activity) context);
             dialog.Show();

@@ -27,7 +27,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <Button
-            android:id="@+id/main_page"
+            android:id="@+id/game_won_rate_us"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
+            android:text="Rate Us"
+            android:backgroundTint="#FFF"
+            android:textColor="@color/colorPrimary"
+            />
+        <Button
+            android:id="@+id/game_won_main_page"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"

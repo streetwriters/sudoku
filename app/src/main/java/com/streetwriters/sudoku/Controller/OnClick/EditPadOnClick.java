@@ -14,6 +14,7 @@ import com.streetwriters.sudoku.View.Layouts.EditPadLayout;
 import com.streetwriters.sudoku.View.Buttons.Cell;
 
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class EditPadOnClick extends ButtonOnClick {
     Context context;
@@ -72,13 +73,37 @@ public class EditPadOnClick extends ButtonOnClick {
     private void hint() {
         //InitializeAds ads = new InitializeAds(context);
         //ads.giveHint();
-        if (gameState.getActiveCellId() > -1) {
-            if(gameState.getHintsUsed()<3) {
-                Digits digits = new Dimensions().numberToDigits(gameState.getActiveCellId());
-                setButtonVisibility(new CellLayout(context, gameState.getActiveCellId()));
-                cellClick(gameState.getSolvedPuzzle()[digits.first()][digits.second()]);
+        if (!gameState.isTakingNotes() && (gameState.getActiveCellId() > -1) && (gameState.getHintsUsed() < 3)) {
+            //if (gameState.getActiveCellId() > -1) {
+            //if (gameState.getHintsUsed() < 3) {
+            Digits digits = new Dimensions().numberToDigits(gameState.getActiveCellId());
+            setButtonVisibility(new CellLayout(context, gameState.getActiveCellId()));
+            cellClick(gameState.getSolvedPuzzle()[digits.first()][digits.second()]);
+            if (!isRunningTest())
                 gameState.setHintsUsed(gameState.getHintsUsed() + 1);
+            //}
+        } else
+            Toast.makeText(context, "Can't perform this Action.", Toast.LENGTH_SHORT).show();
+        //}
+        // }
+    }
+
+    private static AtomicBoolean isRunningTest;
+
+    public static synchronized boolean isRunningTest() {
+        if (null == isRunningTest) {
+            boolean istest;
+
+            try {
+                Class.forName("androidx.test.espresso.Espresso");
+                istest = true;
+            } catch (ClassNotFoundException e) {
+                istest = false;
             }
+
+            isRunningTest = new AtomicBoolean(istest);
         }
+
+        return isRunningTest.get();
     }
 }

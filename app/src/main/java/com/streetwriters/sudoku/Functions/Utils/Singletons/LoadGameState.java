@@ -1,6 +1,7 @@
 package com.streetwriters.sudoku.Functions.Utils.Singletons;
 
 import android.app.Activity;
+import android.util.Log;
 
 import com.streetwriters.sudoku.Functions.InitializeArrays;
 import com.streetwriters.sudoku.Functions.CellGroups;
@@ -126,7 +127,6 @@ public class LoadGameState {
         resumePuzzle.setStartTime(gameState.getStartTime());
         Data data = new Data();
         data.saveGameFile(resumePuzzle);
-        //gameState.resetSingleton();
     }
 }
 

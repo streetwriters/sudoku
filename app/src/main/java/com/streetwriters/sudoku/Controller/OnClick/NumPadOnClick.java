@@ -24,7 +24,7 @@ public class NumPadOnClick extends ButtonOnClick {
     @Override
     public void onClick(View view) {
         int text = Integer.parseInt(((NumPadButton) view).getText().toString());
-
+        if(!gameState.isGameFinished())
         if (!isActiveCellClue()) {
             cellLayout = new CellLayout(context, gameState.getActiveCellId());
             setButtonVisibility(cellLayout);

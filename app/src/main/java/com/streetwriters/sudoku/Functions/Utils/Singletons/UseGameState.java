@@ -1,5 +1,7 @@
 package com.streetwriters.sudoku.Functions.Utils.Singletons;
 
+import android.util.Log;
+
 import com.streetwriters.sudoku.Functions.Utils.Digits;
 import com.streetwriters.sudoku.Functions.Utils.Dimensions;
 
@@ -27,10 +29,6 @@ public abstract class UseGameState {
 
     public int getActiveNoteSize(){
         return getNoteSize(gameState.getActiveCellId());
-    }
-
-    public void removeActiveNoteIndex(int index){
-        getActiveNote().remove(index);
     }
 
     public void removeActiveNoteElement(Integer element){

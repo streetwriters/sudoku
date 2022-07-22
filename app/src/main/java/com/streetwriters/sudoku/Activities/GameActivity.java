@@ -2,6 +2,7 @@ package com.streetwriters.sudoku.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -16,6 +17,7 @@ import com.streetwriters.sudoku.Controller.Play;
 import com.streetwriters.sudoku.Controller.GameController;
 import com.streetwriters.sudoku.Functions.SudukoTimer;
 import com.streetwriters.sudoku.Functions.Utils.Singletons.GameState;
+
 
 /*
  * Classes to be changed;
@@ -92,15 +94,18 @@ public class GameActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        sudukoTimer.T.cancel();
-        pauseAndPlay.onPause();
+        //super.onBackPressed();
+        startActivity(new Intent(this, MainActivity.class));
 
-        if (gameState.getAlertDialogPresent()) {
-            QuitGameDialog quit = new QuitGameDialog(this);
-            quit.Show(pauseAndPlay, sudukoTimer);
-        } else {
-            gameState.setAlertDialogPresent(true);
-        }
+        sudukoTimer.T.cancel();
+        //pauseAndPlay.onPause();
+
+//        if (gameState.getAlertDialogPresent()) {
+//            QuitGameDialog quit = new QuitGameDialog(this);
+//            quit.Show(pauseAndPlay, sudukoTimer);
+//        } else {
+//            gameState.setAlertDialogPresent(true);
+//        }
     }
 
     @Override
@@ -113,6 +118,9 @@ public class GameActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
+        Log.d(GameActivity.class.getSimpleName(), "onSaveInstanceState: " +
+                "isGameFinished: "+!gameState.isGameFinished()+
+                "mistakes: "+ (gameState.getMistakes()<3));
         if (!gameState.isGameFinished() && gameState.getMistakes() < 3) {
             new LoadGameState(this).saveGame();
         }

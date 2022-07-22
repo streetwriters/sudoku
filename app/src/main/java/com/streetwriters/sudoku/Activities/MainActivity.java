@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.streetwriters.sudoku.Activities.Fragments.HomeFragment;
 import com.streetwriters.sudoku.Activities.Fragments.StatsFragment;
 import com.streetwriters.sudoku.Activities.Fragments.TrophyFragment;
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void setBottomNavigationBar() {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 int id = menuItem.getItemId();
