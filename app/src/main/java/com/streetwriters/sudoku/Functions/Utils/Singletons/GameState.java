@@ -2,7 +2,6 @@ package com.streetwriters.sudoku.Functions.Utils.Singletons;
 
 import android.util.Log;
 
-import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.streetwriters.sudoku.Functions.Objects.HistoryItem;
 import com.streetwriters.sudoku.Functions.Utils.Digits;
 import com.streetwriters.sudoku.Functions.Utils.Dimensions;
@@ -28,7 +27,6 @@ public class GameState {
     private ArrayList<Integer>[] matchingCells = new ArrayList[9]; //initialize
     private ArrayList<Integer> activeMatchingCells = new ArrayList<>();
     private Boolean gameOverReward =false;
-    private RewardedAd mRewardedVideoAd;
     private ArrayList<Integer>[][] notes = new ArrayList[9][9]; //initialize
     private Boolean isLastScreenResume= false;
     private String difficulty;
@@ -194,14 +192,6 @@ public class GameState {
 
     public Boolean getGameOverReward() {
         return gameOverReward;
-    }
-
-    public void setmRewardedVideoAd(RewardedAd mRewardedVideoAd) {
-        this.mRewardedVideoAd = mRewardedVideoAd;
-    }
-
-    public RewardedAd getmRewardedVideoAd() {
-        return mRewardedVideoAd;
     }
 
     public void setNotes(ArrayList<Integer>[][] notes) {
