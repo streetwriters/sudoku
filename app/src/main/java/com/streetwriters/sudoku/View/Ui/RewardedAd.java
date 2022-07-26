@@ -26,7 +26,7 @@ import com.unity3d.ads.UnityAdsShowOptions;
 
 public class RewardedAd  extends ButtonOnClick implements IUnityAdsInitializationListener {
     private String unityGameID = "4855805";
-    private Boolean testMode = true;
+    private Boolean testMode = false;
     private String adUnitId = "Rewarded_Android";
     private Boolean isRewardedLoaded = false;
     Activity activity;
