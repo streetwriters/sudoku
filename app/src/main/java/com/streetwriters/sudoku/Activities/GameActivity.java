@@ -1,10 +1,12 @@
 package com.streetwriters.sudoku.Activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +20,13 @@ import com.streetwriters.sudoku.Controller.GameController;
 import com.streetwriters.sudoku.Functions.SudukoTimer;
 import com.streetwriters.sudoku.Functions.Utils.Singletons.GameState;
 
+import com.streetwriters.sudoku.View.Ui.RewardedAd;
+import com.unity3d.ads.IUnityAdsInitializationListener;
+import com.unity3d.ads.IUnityAdsLoadListener;
+import com.unity3d.ads.IUnityAdsShowListener;
+import com.unity3d.ads.UnityAds;
+import com.unity3d.ads.UnityAdsShowOptions;
+
 
 /*
  * Classes to be changed;
@@ -30,10 +39,11 @@ import com.streetwriters.sudoku.Functions.Utils.Singletons.GameState;
 
 public class GameActivity extends AppCompatActivity {
 
-    GameController gameController;
-    SudukoTimer sudukoTimer;
-    Play pauseAndPlay;
-    GameState gameState = GameState.getInstance();
+    private GameController gameController;
+    private SudukoTimer sudukoTimer;
+    private Play pauseAndPlay;
+    private GameState gameState = GameState.getInstance();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,22 +54,15 @@ public class GameActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        //Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_settings);
-        //toolbar.setOverflowIcon(drawable);
-
 
         pauseAndPlay = new Play(this);
         sudukoTimer = new SudukoTimer();
         sudukoTimer.startTimer(this);
 
-//        InitializeAds initializeAds= new InitializeAds(this);
-//        initializeAds.initializeAdView(this);
-//        initializeAds.initializeMobileAds(this);
-//        initializeAds.initializeMobileAdswithId(this);
-//        initializeAds.initializeRewardedVideoAd(this);
-//        initializeAds.loadRewardedVideoAd();
-
         gameController = new GameController(this);
+
+          RewardedAd rewardedAd = new RewardedAd(this);
+          gameState.setRewardedAd(rewardedAd);
     }
 
 
@@ -125,5 +128,4 @@ public class GameActivity extends AppCompatActivity {
             new LoadGameState(this).saveGame();
         }
     }
-
 }

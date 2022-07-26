@@ -35,9 +35,9 @@ public class Selection {
     public Boolean isActiveCellPresent(int activeCell) {
         Boolean isActiveCellPresent = false;
 
-        if(gameState.getHighlightedCells()[1]!=null)
-            for (int index = 0; index < gameState.getHighlightedCells()[1].size(); index++) {
-            if (activeCell == gameState.getHighlightedCells()[1].get(index)) {
+        if(gameState.currentHighlightedCells()!=null)
+            for (int index = 0; index < gameState.currentHighlightedCells().size(); index++) {
+                if (activeCell == gameState.currentHighlightedCells().get(index)) {
                 isActiveCellPresent = true;
             }
         }
@@ -48,8 +48,8 @@ public class Selection {
     public Boolean isCellAbsent(int id) {
         Boolean isCellAbsent = true;
 
-        for (int index = 0; index < gameState.getHighlightedCells()[1].size(); index++) {
-            if (gameState.getHighlightedCells()[1].get(index) == id) {
+        for (int index = 0; index < gameState.currentHighlightedCells().size(); index++) {
+            if (gameState.currentHighlightedCells().get(index) == id) {
                 isCellAbsent = false;
             }
         }
@@ -59,22 +59,22 @@ public class Selection {
 
     public Boolean isCellUnselected(int cellId) {
         Boolean isCellUnselected = true;
-        int length0 = gameState.getHighlightedCells()[0] == null ? 0 : gameState.getHighlightedCells()[0].size();
-        int length1 = gameState.getHighlightedCells()[1] == null ? 0 : gameState.getHighlightedCells()[1].size();
+        int length0 = gameState.previousHighlightedCells() == null ? 0 : gameState.previousHighlightedCells().size();
+        int length1 = gameState.currentHighlightedCells() == null ? 0 : gameState.currentHighlightedCells().size();
         int length = length0 > length1 ? length0 : length1;
 
         for (int index = 0; index < length; index++) {
 
             if (length1 > index)
-                if (cellId == gameState.getHighlightedCells()[1].get(index)) {
+                if (cellId == gameState.currentHighlightedCells().get(index)) {
                     isCellUnselected = false;
                 }
 
             if (length0 > index)
-                if (cellId == gameState.getHighlightedCells()[0].get(index)) {
+                if (cellId == gameState.previousHighlightedCells().get(index)) {
                     if (isCellUnselected) {
                         isCellUnselected = false;
-                        gameState.getHighlightedCells()[1].add(cellId);
+                        gameState.currentHighlightedCells().add(cellId);
                     }
                 }
         }

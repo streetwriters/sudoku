@@ -1,9 +1,10 @@
 package com.streetwriters.sudoku.Functions;
 
 import android.graphics.Color;
-import android.util.Log;
 import android.view.View;
 
+import com.streetwriters.sudoku.Functions.Utils.Digits;
+import com.streetwriters.sudoku.Functions.Utils.Dimensions;
 import com.streetwriters.sudoku.Functions.Utils.Singletons.GameState;
 import com.streetwriters.sudoku.View.Layouts.CellLayout;
 
@@ -48,6 +49,19 @@ public class Highlight {
         highlight(length, gameState.getRowIds()[row]);
     }
 
+    private void highlight(int selectionLength, ArrayList<Integer> gridGroup) {
+        for (int index = 0; index < selectionLength; index++) {
+            int cellId = gridGroup.get(index);
+            CellLayout cellLayout = new CellLayout(view.getContext(), cellId);
+
+            if (selection.isCellUnselected(cellId)) {
+                cellLayout.setSelectedCellBackground();
+                cellLayout.setSelectedCellViewBackground();
+                addCellToMemory(cellId);
+            }
+        }
+    }
+
     public void remove() {
         removeHighlight();
         removeMatchingCells();
@@ -56,9 +70,8 @@ public class Highlight {
 
     private void removeHighlight() {
         int activeCell = gameState.getActiveCellId();
-        //Log.d(Highlight.class.getSimpleName(), "removeHighlight: id: "+activeCell); //highlight does not work when matching cells
 
-        if (gameState.getHighlightedCells()[0] != null) {
+        if (gameState.previousHighlightedCells() != null) {
             CellLayout activeCellLayout = new CellLayout(view.getContext(), activeCell);
 
             if (selection.isActiveCellPresent(activeCell)) {
@@ -66,13 +79,13 @@ public class Highlight {
                 activeCellLayout.setSelectedCellViewBackground();
                 activeCellLayout.setCellTextColor(Color.BLACK);
                 activeCellLayout.setNotesTextColor(Color.BLACK);
-            }else{
+            } else {
                 activeCellLayout.setCellTextColor(Color.BLACK);
                 activeCellLayout.setNotesTextColor(Color.BLACK);
             }
 
-            for (int index = 0; index < gameState.getHighlightedCells()[0].size(); index++) {
-                int id = gameState.getHighlightedCells()[0].get(index);
+            for (int index = 0; index < gameState.previousHighlightedCells().size(); index++) {
+                int id = gameState.previousHighlightedCells().get(index);
                 if (selection.isCellAbsent(id)) {
                     CellLayout cellLayout = new CellLayout(view.getContext(), id);
                     cellLayout.setCellBackground();
@@ -83,46 +96,32 @@ public class Highlight {
     }
 
     private void refreshCellMemory() {
-        gameState.getHighlightedCells()[0] = gameState.getHighlightedCells()[1];
-        gameState.getHighlightedCells()[1] = new ArrayList<>();
+        gameState.setPreviousHighlightedCells(gameState.currentHighlightedCells());
+        gameState.setCurrentHighlightedCells(new ArrayList<>());
     }
 
     private void removeMatchingCells() {
-        //Log.d("HighLight", "removeMatchingNumbers: "+singleton.getActiveValueMatchingIds().size());
         if (gameState.getActiveMatchingCells().size() != 0) {
-            for (int index = 0; index < gameState.getActiveMatchingCells().size(); index++)
+            for (int index = 0; index < gameState.getActiveMatchingCells().size(); index++) {
                 new CellLayout(view.getContext(), gameState.getActiveMatchingCells().get(index)).setFixedCellBackground();
+//                Digits digits = new Dimensions().numberToDigits(gameState.getActiveMatchingCells().get(index));
+//                if (gameState.getUnSolvedPuzzle()[digits.first()][digits.second()] == 0)
+//                    new CellLayout(view.getContext(), gameState.getActiveMatchingCells().get(index)).setSelectedCellBackground();
+//                else
+//                    new CellLayout(view.getContext(), gameState.getActiveMatchingCells().get(index)).setFixedCellBackground();
+            }
             gameState.setActiveMatchingCells(new ArrayList<>());
         }
     }
 
-    public void activeMatchingCells(){
-        //if (singleton.getActiveMatchingCells().size() != 0)
+    public void activeMatchingCells() {
         for (int index = 0; index < gameState.getActiveMatchingCells().size(); index++) {
             new CellLayout(view.getContext(), gameState.getActiveMatchingCells().get(index)).setMatchingCellBackground();
         }
     }
 
-    private void highlight(int selectionLength, ArrayList<Integer> gridGroup) {
-        for (int index = 0; index < selectionLength; index++) {
-            int cellId = gridGroup.get(index);
-            CellLayout cellLayout = new CellLayout(view.getContext(), cellId);
-            //Log.d("Highlight", "highlight:  id: " + cellId);
-
-            if (selection.isCellUnselected(cellId)) {
-                cellLayout.setSelectedCellBackground();
-                cellLayout.setSelectedCellViewBackground();
-                addCellToMemory(cellId);
-            }
-        }
-    }
 
     void addCellToMemory(int cellId) {
-        if (gameState.getHighlightedCells()[1] != null) {
-            gameState.getHighlightedCells()[1].add(cellId);
-        } else {
-            gameState.getHighlightedCells()[1] = new ArrayList<>();
-            gameState.getHighlightedCells()[1].add(cellId);
-        }
+        gameState.currentHighlightedCells().add(cellId);
     }
 }

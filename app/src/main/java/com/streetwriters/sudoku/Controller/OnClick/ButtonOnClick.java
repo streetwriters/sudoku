@@ -15,10 +15,10 @@ import com.streetwriters.sudoku.View.Layouts.CellLayout;
 
 import java.util.ArrayList;
 
-public abstract class ButtonOnClick extends UseGameState implements View.OnClickListener{
+public class ButtonOnClick extends UseGameState {
     Context context;
 
-    ButtonOnClick(Context context) {
+     public ButtonOnClick(Context context) {
         this.context = context;
     }
 
@@ -60,19 +60,13 @@ public abstract class ButtonOnClick extends UseGameState implements View.OnClick
             }
     }
 
-    void cellClick(int text){
+    public void cellClick(int text){
+        Log.d(ButtonOnClick.class.getSimpleName(), "cellClick: id: "+gameState.getActiveCellId());
         CellLayout cellLayout = new CellLayout(context, gameState.getActiveCellId());
         new History().setCellHistory(cellLayout);
         cellLayout.setCellText(Integer.toString(text));
         new CellGroups().addMatchingCell(text, gameState.getActiveCellId());
         gameState.updateUserSolvedPuzzle(text);
-//        CheckErrors checkErrors = new CheckErrors();
-//        checkErrors.check((Activity) context);
-//        GameCompletion completion = new GameCompletion();
-//        if (completion.isGameWon()) {
-//            GameCompleteDialog dialog = new GameCompleteDialog((Activity) context);
-//            dialog.Show();
-//        }
         checkErrors();
         checkGameCompletion();
     }
@@ -90,7 +84,7 @@ public abstract class ButtonOnClick extends UseGameState implements View.OnClick
         }
     }
 
-    void setButtonVisibility(CellLayout cellLayout) {
+    public void setButtonVisibility(CellLayout cellLayout) {
         if (gameState.isTakingNotes())
             showNotes(cellLayout);
         else

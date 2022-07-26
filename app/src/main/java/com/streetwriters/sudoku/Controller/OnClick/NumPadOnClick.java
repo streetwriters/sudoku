@@ -12,7 +12,7 @@ import com.streetwriters.sudoku.Functions.Utils.Dimensions;
 import com.streetwriters.sudoku.View.Buttons.NumPadButton;
 import com.streetwriters.sudoku.View.Layouts.CellLayout;
 
-public class NumPadOnClick extends ButtonOnClick {
+public class NumPadOnClick extends ButtonOnClick implements View.OnClickListener{
     Context context;
     CellLayout cellLayout;
 

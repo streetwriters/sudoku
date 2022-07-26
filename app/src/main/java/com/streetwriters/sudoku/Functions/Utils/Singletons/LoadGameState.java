@@ -60,7 +60,7 @@ public class LoadGameState {
         gameState.setHintsUsed(0);
         gameState.setNotes(new InitializeArrays().getNotes());
         gameState.setIsTakingNotes(false);
-        gameState.setHighlightedCells(new ArrayList[2]);
+        gameState.setPreviousHighlightedCells(new ArrayList<>());
         gameState.setActiveMatchingCells(new ArrayList<>());
         gameState.setGameFinished(false);
         CellGroups cellGroups = new CellGroups();
@@ -96,6 +96,7 @@ public class LoadGameState {
         gameState.setUserSolvedPuzzle(resumePuzzle.getSolved());
         gameState.setGameTimer(resumePuzzle.getTimer());
         gameState.setMistakes(resumePuzzle.getMistakes());
+        Log.d(LoadGameState.class.getSimpleName(), "loadSavedGame: mistakes: "+resumePuzzle.getMistakes());
         gameState.setNotes(resumePuzzle.getBoardButtonNotes());
         gameState.setIsLastScreenResume(true);
         gameState.setUserHistory(resumePuzzle.getUserHistory());
@@ -103,7 +104,7 @@ public class LoadGameState {
         gameState.setDifficulty(resumePuzzle.getDifficulty());
         gameState.setStartTime(resumePuzzle.getStartTime());
         gameState.setIsTakingNotes(false);
-        gameState.setHighlightedCells(new ArrayList[2]);
+        gameState.setPreviousHighlightedCells(new ArrayList<>());
         gameState.setActiveMatchingCells(new ArrayList<>());
         gameState.setGameFinished(false);
         CellGroups cellGroups = new CellGroups();

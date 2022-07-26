@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.streetwriters.sudoku.Activities.MainActivity;
 import com.streetwriters.sudoku.Controller.Stats;
+import com.streetwriters.sudoku.Functions.FetchData.Data;
 import com.streetwriters.sudoku.Functions.Utils.Congratulations;
 import com.streetwriters.sudoku.Functions.Utils.Singletons.GameState;
 import com.streetwriters.sudoku.R;
@@ -52,6 +53,7 @@ public class GameCompleteDialog extends DialogHelper {
         Congratulations congratulations = new Congratulations();
         congratulations.startFireworks(activity, getCustomView());
         Stats scoreBoard = new Stats(gameState.getMistakes(), activity, 1);
+        new Data().deleteGameFile();
     }
 
     private void openLink(String link) {

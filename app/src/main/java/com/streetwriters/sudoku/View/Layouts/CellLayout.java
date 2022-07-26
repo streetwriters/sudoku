@@ -178,6 +178,11 @@ public class CellLayout {
         ((Cell) cellView.findViewById(R.id.cell)).setTextColor(Color.RED);
     }
 
+    public Boolean isCellTextRed(){
+        ColorStateList colors = ((Cell) cellView.findViewById(R.id.cell)).getTextColors();
+        return colors.getDefaultColor() == Color.RED;
+    }
+
     public void setNoteTypeface(int noteId, String typeface) {
         Properties properties = new Properties();
         if (cellView.findViewById(noteId) != null)

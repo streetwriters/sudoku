@@ -42,6 +42,13 @@ public class Dimensions {
         return id;
     }
 
+    public int stringToDrawable(String stringDrawable){
+        Resources r = com.streetwriters.sudoku.Functions.Utils.MyApplication.getContext().getResources();
+        String name= com.streetwriters.sudoku.Functions.Utils.MyApplication.getContext().getPackageName();
+        int drawable = r.getIdentifier(stringDrawable, "drawable", name);
+        return drawable;
+    }
+
     public String monthToString(int month) {
         if (month == 1) {
             return "January";

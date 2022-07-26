@@ -1,6 +1,7 @@
 package com.streetwriters.sudoku.Controller.Dialogs;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.widget.Toast;
 
@@ -13,6 +14,7 @@ import com.streetwriters.sudoku.R;
 
 public class GameOverDialog extends DialogHelper {
     GameState gameState = GameState.getInstance();
+    Dialog dialog;
 
     public GameOverDialog(Activity activity) {
         super(activity);
@@ -22,34 +24,26 @@ public class GameOverDialog extends DialogHelper {
         setLayout(R.layout.dialog_layout);
         setCustomView();
         setCancel(false);
+        this.dialog = getDialog();
         Stats scoreBoard = new Stats(gameState.getMistakes(), activity, 0);
         new Data().deleteGameFile();
         gameState.setGameFinished(true);
-//        setButton(R.id.second_chance, v -> {
-//            secondChance();
-//            getDialog().dismiss();
-//        });
-
-        setButton(R.id.new_game, v -> {
-            new DifficultyDialog(activity).Show();
-            getDialog().dismiss();
+        setButton(R.id.second_chance, v -> {
+            secondChance();
+            //dialog.dismiss();
         });
 
-        getDialog().show();
+        setButton(R.id.new_game, v -> {
+            dialog.dismiss();
+            new DifficultyDialog(activity).Show();
+        });
+
+        dialog.show();
     }
 
     void secondChance() {
-//        if (gameState.getmRewardedVideoAd().isLoaded()) {
-//            gameState.setGameOverReward(true);
-//            gameState.getmRewardedVideoAd().show();
-//        } else {
-            Stats scoreBoard = new Stats(gameState.getMistakes(), activity, 0);
-            //LoadData data= new LoadData(activity);
-            //data.DeleteSavedPuzzleData();
-            new Data().deleteGameFile();
-            Toast.makeText(activity, "No Ads to Show", Toast.LENGTH_LONG).show();
-            activity.startActivity(new Intent(activity, MainActivity.class));
-        //}
+        gameState.setAdTypeHint(false);
+        gameState.getRewardedAd().DisplayRewardedAd(dialog);
     }
 
 }

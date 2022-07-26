@@ -1,9 +1,12 @@
 package com.streetwriters.sudoku.Functions.Utils.Singletons;
 
+import android.app.Activity;
+import android.content.Context;
 import android.util.Log;
 
 import com.streetwriters.sudoku.Functions.Utils.Digits;
 import com.streetwriters.sudoku.Functions.Utils.Dimensions;
+import com.streetwriters.sudoku.View.Layouts.CellLayout;
 
 import java.util.ArrayList;
 
@@ -41,6 +44,17 @@ public abstract class UseGameState {
 
     public Boolean isActiveCellClue(){
         return gameState.getActiveCellId()==-1;
+    }
+
+    public Boolean isActiveCellTrulyFilled(Context context){
+        CellLayout cellLayout = new CellLayout(context,gameState.getActiveCellId());
+        if(!cellLayout.isCellFilled()){
+            return false;
+        }else if(cellLayout.isCellTextRed()){
+            return false;
+        }else {
+            return true;
+        }
     }
 
     public Boolean isClue(int i,int j){

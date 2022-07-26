@@ -129,8 +129,8 @@ public class ExampleInstrumentedTest {
 
     @Test
     public void GameWon() {
-        onView(withId(R.id.main_new_game)).perform(click());
-        onView(withText("MEDIUM")).perform(click());
+        //onView(withId(R.id.main_new_game)).perform(click());
+        //onView(withText("MEDIUM")).perform(click());
 
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {

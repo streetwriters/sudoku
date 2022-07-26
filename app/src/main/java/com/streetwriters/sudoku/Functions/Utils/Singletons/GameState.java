@@ -5,6 +5,8 @@ import android.util.Log;
 import com.streetwriters.sudoku.Functions.Objects.HistoryItem;
 import com.streetwriters.sudoku.Functions.Utils.Digits;
 import com.streetwriters.sudoku.Functions.Utils.Dimensions;
+import com.streetwriters.sudoku.View.Ui.RewardedAd;
+import com.unity3d.ads.IUnityAdsLoadListener;
 
 import java.util.ArrayList;
 
@@ -19,7 +21,8 @@ public class GameState {
     private int gameTimer = 0;
     private int mistakes = 0;
     private int hintsUsed = 0;
-    private ArrayList<Integer>[] highlightedCells = new ArrayList[2];
+    private ArrayList<Integer> previousHighlightedCells = new ArrayList<>();
+    private ArrayList<Integer> currentHighlightedCells = new ArrayList<>();
     private ArrayList<Integer>[] boxes = new ArrayList[9];
     private ArrayList<Integer>[] columns = new ArrayList[9];
     private ArrayList<Integer>[] rows = new ArrayList[9];
@@ -32,6 +35,9 @@ public class GameState {
     private String difficulty;
     private long startTime;
     private Boolean gameFinished = false;
+    private RewardedAd rewardedAd;
+    private Boolean isAdTypeHint = true;
+
 
     private GameState(){
     }
@@ -130,12 +136,20 @@ public class GameState {
         return hintsUsed;
     }
 
-    public void setHighlightedCells(ArrayList<Integer>[] highlightedCells) {
-        this.highlightedCells = highlightedCells;
+    public void setPreviousHighlightedCells(ArrayList<Integer> previousHighlightedCells) {
+        this.previousHighlightedCells = previousHighlightedCells;
     }
 
-    public ArrayList<Integer>[] getHighlightedCells() {
-        return highlightedCells;
+    public ArrayList<Integer> previousHighlightedCells() {
+        return previousHighlightedCells;
+    }
+
+    public void setCurrentHighlightedCells(ArrayList<Integer> currentHighlightedCells) {
+        this.currentHighlightedCells = currentHighlightedCells;
+    }
+
+    public ArrayList<Integer> currentHighlightedCells() {
+        return currentHighlightedCells;
     }
 
     public void setBoxes(ArrayList<Integer>[] boxes) {
@@ -224,6 +238,22 @@ public class GameState {
 
     public long getStartTime() {
         return startTime;
+    }
+
+    public void setRewardedAd(RewardedAd rewardedAd) {
+        this.rewardedAd = rewardedAd;
+    }
+
+    public RewardedAd getRewardedAd() {
+        return rewardedAd;
+    }
+
+    public void setAdTypeHint(Boolean adTypeHint) {
+        isAdTypeHint = adTypeHint;
+    }
+
+    public Boolean isAdTypeHint() {
+        return isAdTypeHint;
     }
 
     public void resetSingleton(){

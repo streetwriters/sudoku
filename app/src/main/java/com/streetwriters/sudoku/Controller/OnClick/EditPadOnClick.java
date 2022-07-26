@@ -1,6 +1,7 @@
 package com.streetwriters.sudoku.Controller.OnClick;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -12,11 +13,15 @@ import com.streetwriters.sudoku.Functions.Objects.HistoryItem;
 import com.streetwriters.sudoku.View.Layouts.CellLayout;
 import com.streetwriters.sudoku.View.Layouts.EditPadLayout;
 import com.streetwriters.sudoku.View.Buttons.Cell;
+import com.streetwriters.sudoku.View.Ui.RewardedAd;
+import com.unity3d.ads.IUnityAdsShowListener;
+import com.unity3d.ads.UnityAds;
+import com.unity3d.ads.UnityAdsShowOptions;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class EditPadOnClick extends ButtonOnClick {
+public class EditPadOnClick extends ButtonOnClick implements View.OnClickListener {
     Context context;
 
     public EditPadOnClick(Context context) {
@@ -73,15 +78,22 @@ public class EditPadOnClick extends ButtonOnClick {
     private void hint() {
         //InitializeAds ads = new InitializeAds(context);
         //ads.giveHint();
-        if (!gameState.isTakingNotes() && (gameState.getActiveCellId() > -1) && (gameState.getHintsUsed() < 3)) {
-            //if (gameState.getActiveCellId() > -1) {
-            //if (gameState.getHintsUsed() < 3) {
-            Digits digits = new Dimensions().numberToDigits(gameState.getActiveCellId());
-            setButtonVisibility(new CellLayout(context, gameState.getActiveCellId()));
-            cellClick(gameState.getSolvedPuzzle()[digits.first()][digits.second()]);
-            if (!isRunningTest())
-                gameState.setHintsUsed(gameState.getHintsUsed() + 1);
-            //}
+        if (!gameState.isTakingNotes()) {
+            if (gameState.getActiveCellId() > -1) {
+                if (gameState.getHintsUsed() < 3) {
+                    Digits digits = new Dimensions().numberToDigits(gameState.getActiveCellId());
+                    setButtonVisibility(new CellLayout(context, gameState.getActiveCellId()));
+                    cellClick(gameState.getSolvedPuzzle()[digits.first()][digits.second()]);
+                    if (!isRunningTest()) {
+                        gameState.setHintsUsed(gameState.getHintsUsed() + 1);
+                        new EditPadLayout(context).setHintIcon(gameState.getHintsUsed() < 3 ? gameState.getHintsUsed() : -1);
+                    }
+                } else {
+                    gameState.getRewardedAd().DisplayRewardedAd();
+                    gameState.setAdTypeHint(true);
+                    new EditPadLayout(context).setHintIcon(gameState.getHintsUsed());
+                }
+            }
         } else
             Toast.makeText(context, "Can't perform this Action.", Toast.LENGTH_SHORT).show();
         //}
