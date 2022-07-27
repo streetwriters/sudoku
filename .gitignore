@@ -13,3 +13,7 @@
 .externalNativeBuild
 key.base64.txt
 *.keystore
+/app/release/app-arm64-v8a-release.apk
+/app/release/app-armeabi-v7a-release.apk
+/app/release/app-x86-release.apk
+/app/release/app-x86_64-release.apk

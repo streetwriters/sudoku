@@ -92,7 +92,7 @@ public class Data extends Files {
             Log.d("ASSETS", "getPuzzles: "+e.getMessage());
         }
 
-        return puzzle.get(getRandomNum(1000));
+        return puzzle.get(getRandomNum(11000));
     }
 
     private int getRandomNum(int totalRiddles){
