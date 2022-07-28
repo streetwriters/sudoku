@@ -1,7 +1,6 @@
 package com.streetwriters.sudoku.Controller.OnClick;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -13,10 +12,6 @@ import com.streetwriters.sudoku.Functions.Objects.HistoryItem;
 import com.streetwriters.sudoku.View.Layouts.CellLayout;
 import com.streetwriters.sudoku.View.Layouts.EditPadLayout;
 import com.streetwriters.sudoku.View.Buttons.Cell;
-import com.streetwriters.sudoku.View.Ui.RewardedAd;
-import com.unity3d.ads.IUnityAdsShowListener;
-import com.unity3d.ads.UnityAds;
-import com.unity3d.ads.UnityAdsShowOptions;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -89,7 +84,7 @@ public class EditPadOnClick extends ButtonOnClick implements View.OnClickListene
                         new EditPadLayout(context).setHintIcon(gameState.getHintsUsed() < 3 ? gameState.getHintsUsed() : -1);
                     }
                 } else {
-                    gameState.getRewardedAd().DisplayRewardedAd();
+                    gameState.getRewardedAd().displayRewardedAd();
                     gameState.setAdTypeHint(true);
                     new EditPadLayout(context).setHintIcon(gameState.getHintsUsed());
                 }

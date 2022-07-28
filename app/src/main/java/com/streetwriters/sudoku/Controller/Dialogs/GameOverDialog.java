@@ -2,10 +2,7 @@ package com.streetwriters.sudoku.Controller.Dialogs;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.content.Intent;
-import android.widget.Toast;
 
-import com.streetwriters.sudoku.Activities.MainActivity;
 import com.streetwriters.sudoku.Controller.Stats;
 import com.streetwriters.sudoku.Functions.FetchData.Data;
 import com.streetwriters.sudoku.Functions.Utils.Singletons.GameState;
@@ -43,7 +40,7 @@ public class GameOverDialog extends DialogHelper {
 
     void secondChance() {
         gameState.setAdTypeHint(false);
-        gameState.getRewardedAd().DisplayRewardedAd(dialog);
+        gameState.getRewardedAd().displayRewardedAd(dialog);
     }
 
 }

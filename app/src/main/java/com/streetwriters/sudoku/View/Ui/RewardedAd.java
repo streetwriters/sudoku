@@ -25,7 +25,8 @@ import com.unity3d.ads.UnityAdsShowOptions;
 
 public class RewardedAd  extends ButtonOnClick implements IUnityAdsInitializationListener {
     private String unityGameID = "4855805";
-    private Boolean testMode = BuildConfig.DEBUG;
+    private Boolean testMode = false;
+            //BuildConfig.DEBUG;
     private String adUnitId = "Rewarded_Android";
     private Boolean isRewardedLoaded = false;
     Activity activity;
@@ -40,7 +41,9 @@ public class RewardedAd  extends ButtonOnClick implements IUnityAdsInitializatio
     private IUnityAdsLoadListener loadListener = new IUnityAdsLoadListener() {
         @Override
         public void onUnityAdsAdLoaded(String placementId) {
-            UnityAds.show(activity, adUnitId, new UnityAdsShowOptions(), showListener);
+            //UnityAds.show(activity, adUnitId, new UnityAdsShowOptions(), showListener);
+            if (GameState.getInstance().getHintsUsed() == 3)
+                new EditPadLayout(activity).setHintIcon(-1);
         }
 
         @Override
@@ -54,7 +57,7 @@ public class RewardedAd  extends ButtonOnClick implements IUnityAdsInitializatio
         public void onUnityAdsShowFailure(String placementId, UnityAds.UnityAdsShowError error, String message) {
             Log.e("UnityAdsExample", "Unity Ads failed to show ad for " + placementId + " with error: [" + error + "] " + message);
             // Re-enable the button if the user should be allowed to watch another rewarded ad
-                new EditPadLayout(activity).setHintIcon(-1);
+                new EditPadLayout(activity).setHintIcon(3);
         }
 
         @Override
@@ -95,6 +98,9 @@ public class RewardedAd  extends ButtonOnClick implements IUnityAdsInitializatio
                 }
                 Toast.makeText(activity, "No Ads to Show", Toast.LENGTH_LONG).show();
             }
+
+            loadRewardedAd();
+
             // Re-enable the button if the user should be allowed to watch another rewarded ad
             //rewardedButton.setEnabled(true);
         }
@@ -102,8 +108,7 @@ public class RewardedAd  extends ButtonOnClick implements IUnityAdsInitializatio
 
     @Override
     public void onInitializationComplete() {
-        if (GameState.getInstance().getHintsUsed() == 3)
-            new EditPadLayout(activity).setHintIcon(-1);
+        loadRewardedAd();
     }
 
     @Override
@@ -112,14 +117,17 @@ public class RewardedAd  extends ButtonOnClick implements IUnityAdsInitializatio
     }
 
     // Implement a function to load an rewarded ad. The ad will start to show after the ad has been loaded.
-    public void DisplayRewardedAd() {
+    public void loadRewardedAd() {
         UnityAds.load(adUnitId, loadListener);
     }
 
-    public void DisplayRewardedAd(Dialog dialog) {
-        UnityAds.load(adUnitId, loadListener);
+    public void displayRewardedAd(){
+        UnityAds.show(activity, adUnitId, new UnityAdsShowOptions(), showListener);
+    }
+
+    public void displayRewardedAd(Dialog dialog){
+        UnityAds.show(activity, adUnitId, new UnityAdsShowOptions(), showListener);
         this.dialog = dialog;
     }
-
 }
 
