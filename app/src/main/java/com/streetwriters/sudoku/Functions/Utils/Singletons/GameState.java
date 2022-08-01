@@ -6,7 +6,6 @@ import com.streetwriters.sudoku.Functions.Objects.HistoryItem;
 import com.streetwriters.sudoku.Functions.Utils.Digits;
 import com.streetwriters.sudoku.Functions.Utils.Dimensions;
 import com.streetwriters.sudoku.View.Ui.RewardedAd;
-import com.unity3d.ads.IUnityAdsLoadListener;
 
 import java.util.ArrayList;
 
@@ -20,7 +19,7 @@ public class GameState {
     private Boolean isTakingNotes =false;
     private int gameTimer = 0;
     private int mistakes = 0;
-    private int hintsUsed = 0;
+    private int hints = 0;
     private ArrayList<Integer> previousHighlightedCells = new ArrayList<>();
     private ArrayList<Integer> currentHighlightedCells = new ArrayList<>();
     private ArrayList<Integer>[] boxes = new ArrayList[9];
@@ -128,12 +127,12 @@ public class GameState {
         return mistakes;
     }
 
-    public void setHintsUsed(int hintsUsed) {
-        this.hintsUsed = hintsUsed;
+    public void setHints(int hints) {
+        this.hints = hints;
     }
 
-    public int getHintsUsed() {
-        return hintsUsed;
+    public int getHints() {
+        return hints;
     }
 
     public void setPreviousHighlightedCells(ArrayList<Integer> previousHighlightedCells) {

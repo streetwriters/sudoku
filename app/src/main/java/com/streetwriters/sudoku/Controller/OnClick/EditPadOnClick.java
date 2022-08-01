@@ -75,18 +75,19 @@ public class EditPadOnClick extends ButtonOnClick implements View.OnClickListene
         //ads.giveHint();
         if (!gameState.isTakingNotes()) {
             if (gameState.getActiveCellId() > -1) {
-                if (gameState.getHintsUsed() < 3) {
+                if (gameState.getHints() > 0) {
                     Digits digits = new Dimensions().numberToDigits(gameState.getActiveCellId());
                     setButtonVisibility(new CellLayout(context, gameState.getActiveCellId()));
                     cellClick(gameState.getSolvedPuzzle()[digits.first()][digits.second()]);
                     if (!isRunningTest()) {
-                        gameState.setHintsUsed(gameState.getHintsUsed() + 1);
-                        new EditPadLayout(context).setHintIcon(gameState.getHintsUsed() < 3 ? gameState.getHintsUsed() : -1);
+                        gameState.setHints(gameState.getHints() - 1);
+                        new EditPadLayout(context).setHintIcon(gameState.getHints());
+                        gameState.getRewardedAd().loadRewardedAd();
                     }
                 } else {
                     gameState.getRewardedAd().displayRewardedAd();
                     gameState.setAdTypeHint(true);
-                    new EditPadLayout(context).setHintIcon(gameState.getHintsUsed());
+                    new EditPadLayout(context).setHintIcon(gameState.getHints());
                 }
             }
         } else

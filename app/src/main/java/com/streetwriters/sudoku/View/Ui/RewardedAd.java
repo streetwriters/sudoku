@@ -7,7 +7,6 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.streetwriters.sudoku.Activities.MainActivity;
-import com.streetwriters.sudoku.BuildConfig;
 import com.streetwriters.sudoku.Controller.OnClick.ButtonOnClick;
 import com.streetwriters.sudoku.Controller.Stats;
 import com.streetwriters.sudoku.Functions.FetchData.Data;
@@ -26,7 +25,6 @@ import com.unity3d.ads.UnityAdsShowOptions;
 public class RewardedAd  extends ButtonOnClick implements IUnityAdsInitializationListener {
     private String unityGameID = "4855805";
     private Boolean testMode = false;
-            //BuildConfig.DEBUG;
     private String adUnitId = "Rewarded_Android";
     private Boolean isRewardedLoaded = false;
     Activity activity;
@@ -42,7 +40,7 @@ public class RewardedAd  extends ButtonOnClick implements IUnityAdsInitializatio
         @Override
         public void onUnityAdsAdLoaded(String placementId) {
             //UnityAds.show(activity, adUnitId, new UnityAdsShowOptions(), showListener);
-            if (GameState.getInstance().getHintsUsed() == 3)
+            if (GameState.getInstance().getHints() == 0)
                 new EditPadLayout(activity).setHintIcon(-1);
         }
 
@@ -57,7 +55,7 @@ public class RewardedAd  extends ButtonOnClick implements IUnityAdsInitializatio
         public void onUnityAdsShowFailure(String placementId, UnityAds.UnityAdsShowError error, String message) {
             Log.e("UnityAdsExample", "Unity Ads failed to show ad for " + placementId + " with error: [" + error + "] " + message);
             // Re-enable the button if the user should be allowed to watch another rewarded ad
-                new EditPadLayout(activity).setHintIcon(3);
+                new EditPadLayout(activity).setHintIcon(-1);
         }
 
         @Override

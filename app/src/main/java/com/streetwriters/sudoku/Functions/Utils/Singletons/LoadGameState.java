@@ -1,7 +1,6 @@
 package com.streetwriters.sudoku.Functions.Utils.Singletons;
 
 import android.app.Activity;
-import android.util.Log;
 
 import com.streetwriters.sudoku.Functions.InitializeArrays;
 import com.streetwriters.sudoku.Functions.CellGroups;
@@ -57,7 +56,7 @@ public class LoadGameState {
         gameState.setMistakes(0);
         gameState.setGameTimer(0);
         gameState.setUserHistory(new ArrayList<>());
-        gameState.setHintsUsed(0);
+        gameState.setHints(3);
         gameState.setNotes(new InitializeArrays().getNotes());
         gameState.setIsTakingNotes(false);
         gameState.setPreviousHighlightedCells(new ArrayList<>());
@@ -96,8 +95,8 @@ public class LoadGameState {
         gameState.setUserSolvedPuzzle(resumePuzzle.getSolved());
         gameState.setGameTimer(resumePuzzle.getTimer());
         gameState.setMistakes(resumePuzzle.getMistakes());
-        Log.d(LoadGameState.class.getSimpleName(), "loadSavedGame: mistakes: "+resumePuzzle.getMistakes());
         gameState.setNotes(resumePuzzle.getBoardButtonNotes());
+        gameState.setHints(resumePuzzle.getHints());
         gameState.setIsLastScreenResume(true);
         gameState.setUserHistory(resumePuzzle.getUserHistory());
         gameState.setMatchingCells(resumePuzzle.getNumberOccurencesList());
@@ -126,6 +125,7 @@ public class LoadGameState {
         resumePuzzle.setUserHistory(gameState.getUserHistory());
         resumePuzzle.setNumberOccurencesList(gameState.getMatchingCells());
         resumePuzzle.setStartTime(gameState.getStartTime());
+        resumePuzzle.setHints(gameState.getHints());
         Data data = new Data();
         data.saveGameFile(resumePuzzle);
     }

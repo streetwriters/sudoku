@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,25 +52,32 @@ public class HomeFragment extends Fragment {
         });
 
         mainGameBtn.setOnLongClickListener(view1 -> true);
+
+//        try {
+//            ResumePuzzle resumePuzzle = new Data().isResumeFilePresent();
+//            Log.d(HomeFragment.class.getSimpleName(), "onCreateView: "+resumePuzzle);
         AppCompatButton resumeBtn = view.findViewById(R.id.main_resume_game);
-
-        try {
-            ResumePuzzle resumePuzzle = new Data().isResumeFilePresent();
-            Log.d(HomeFragment.class.getSimpleName(), "onCreateView: "+resumePuzzle);
-
             resumeBtn.setVisibility(View.VISIBLE);
             resumeBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(activity, GameActivity.class);
-                    intent.putExtra("difficulty", 5);
-                    startActivity(intent);
+                    try {
+                        ResumePuzzle resumePuzzle = new Data().isResumeFilePresent();
+                        Log.d(HomeFragment.class.getSimpleName(), "onCreateView: "+resumePuzzle);
+                        Intent intent = new Intent(activity, GameActivity.class);
+                        intent.putExtra("difficulty", 5);
+                        startActivity(intent);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        Toast.makeText(activity, "No games to resume", Toast.LENGTH_SHORT).show();
+                        //resumeBtn.setVisibility(View.GONE);
+                    }
                 }
             });
-        } catch (Exception e) {
-            e.printStackTrace();
-            resumeBtn.setVisibility(View.GONE);
-        }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            resumeBtn.setVisibility(View.GONE);
+//        }
 
         AppCompatButton helpButton = view.findViewById(R.id.main_help);
 

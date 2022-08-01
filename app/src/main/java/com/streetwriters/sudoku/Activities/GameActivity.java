@@ -113,7 +113,9 @@ public class GameActivity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        onBackPressed();
+        //onBackPressed();
+        startActivity(new Intent(this, MainActivity.class));
+        sudukoTimer.T.cancel();
         return true;
     }
 

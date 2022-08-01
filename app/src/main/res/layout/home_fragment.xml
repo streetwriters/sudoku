@@ -64,7 +64,6 @@
             android:text="RESUME GAME"
             android:textSize="15dp"
             android:layout_marginTop="20dp"
-            android:visibility="gone"
             />
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/main_help"
