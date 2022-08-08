@@ -30,13 +30,14 @@
             android:layout_height="0dp"
             android:layout_weight="0.15"
             android:textColor="?colorAccent"
-            android:textSize="20dp"/>
+            android:textSize="18dp"/>
 
         <ImageView
             android:id="@+id/flag"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_weight="0.7"
+            android:layout_marginTop="20dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:scaleType="fitCenter"
@@ -66,17 +67,17 @@
         android:visibility="gone"
         />
 
-
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/trophy_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:textColor="@color/colorPrimary"
-        android:background="@drawable/main_button"
+        android:background="@drawable/main_button_accent"
         android:text="PLAY"
-        android:textSize="20dp"/>
+        android:textColor="@color/white"
+        android:textSize="16dp" />
+
 
 </LinearLayout>

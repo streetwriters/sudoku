@@ -8,21 +8,10 @@
         <entry key="app/src/main/res/drawable/calender_button.xml" value="0.163" />
         <entry key="app/src/main/res/drawable/circle.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/editing_button_bakcground.xml" value="0.1295" />
-        <entry key="app/src/main/res/drawable/fixed_button.xml" value="0.1355" />
-        <entry key="app/src/main/res/drawable/fixed_cell.xml" value="0.141" />
-        <entry key="app/src/main/res/drawable/fixed_cell_selected.xml" value="0.141" />
-        <entry key="app/src/main/res/drawable/hint_1_black.xml" value="0.162" />
-        <entry key="app/src/main/res/drawable/hint_1_white.xml" value="0.162" />
-        <entry key="app/src/main/res/drawable/hint_2_black.xml" value="0.162" />
-        <entry key="app/src/main/res/drawable/hint_2_white.xml" value="0.162" />
-        <entry key="app/src/main/res/drawable/hint_3_black.xml" value="0.162" />
-        <entry key="app/src/main/res/drawable/hint_3_white.xml" value="0.162" />
         <entry key="app/src/main/res/drawable/ic_advertising.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/ic_assessment_black_24dp.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/ic_average_time.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/ic_bar_chart.xml" value="0.1295" />
-        <entry key="app/src/main/res/drawable/ic_baseline_help_24.xml" value="0.141" />
-        <entry key="app/src/main/res/drawable/ic_baseline_help_24.xml.xml" value="0.141" />
         <entry key="app/src/main/res/drawable/ic_best_score.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/ic_best_streak.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/ic_best_time.xml" value="0.1295" />
@@ -32,11 +21,6 @@
         <entry key="app/src/main/res/drawable/ic_flag_black_24dp.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/ic_flag_waving.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/ic_flag_with_cross.xml" value="0.1295" />
-        <entry key="app/src/main/res/drawable/ic_hint_0.xml" value="0.141" />
-        <entry key="app/src/main/res/drawable/ic_hint_1.xml" value="0.141" />
-        <entry key="app/src/main/res/drawable/ic_hint_2.xml" value="0.141" />
-        <entry key="app/src/main/res/drawable/ic_hint_3.xml" value="0.141" />
-        <entry key="app/src/main/res/drawable/ic_hint_ad.xml" value="0.141" />
         <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/ic_idea.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/ic_idea_ad.xml" value="0.1295" />
@@ -50,48 +34,42 @@
         <entry key="app/src/main/res/drawable/ic_pause.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/ic_play.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/ic_settings.xml" value="0.1295" />
-        <entry key="app/src/main/res/drawable/ic_sharp_bedtime_24.xml" value="0.141" />
+        <entry key="app/src/main/res/drawable/ic_sharp_bedtime_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_star_black_24dp.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/ic_sudoku_icon.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/ic_trophy.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/ic_undo_black_24dp.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/ic_wins_with_no_mistakes.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/main_button.xml" value="0.1295" />
-        <entry key="app/src/main/res/drawable/navigation_view_colors.xml" value="0.14" />
+        <entry key="app/src/main/res/drawable/main_button_accent.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/navigation_view_colors.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/occurence_button.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/selected_button.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/shadow_background.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/static_button.xml" value="0.1295" />
-        <entry key="app/src/main/res/drawable/static_button_selected.xml" value="0.141" />
         <entry key="app/src/main/res/drawable/suduko_square_background.xml" value="0.1295" />
-        <entry key="app/src/main/res/drawable/test.xml" value="0.141" />
         <entry key="app/src/main/res/drawable/unselected_button.xml" value="0.1295" />
-        <entry key="app/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.13693693693693693" />
+        <entry key="app/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.25" />
         <entry key="app/src/main/res/layout-w936dp/content_scrolling.xml" value="0.17" />
         <entry key="app/src/main/res/layout/activity_game.xml" value="0.12447916666666667" />
         <entry key="app/src/main/res/layout/activity_help.xml" value="0.12447916666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.12447916666666667" />
         <entry key="app/src/main/res/layout/calander_day_layout.xml" value="0.25317028985507245" />
-        <entry key="app/src/main/res/layout/content_game.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/content_game.xml" value="0.25317028985507245" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.12447916666666667" />
-        <entry key="app/src/main/res/layout/content_scrolling.xml" value="0.27662037037037035" />
-        <entry key="app/src/main/res/layout/dialog_layout.xml" value="0.16" />
-        <entry key="app/src/main/res/layout/difficult_options.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/content_scrolling.xml" value="0.33" />
         <entry key="app/src/main/res/layout/game_won.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/games_layout.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/home_fragment.xml" value="0.16" />
-        <entry key="app/src/main/res/layout/pop_up_window.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/scores_layout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/games_layout.xml" value="0.24954710144927536" />
+        <entry key="app/src/main/res/layout/home_fragment.xml" value="0.33" />
         <entry key="app/src/main/res/layout/settings_activity.xml" value="0.14635416666666667" />
-        <entry key="app/src/main/res/layout/stats_fragment.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/streak_layout.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/time_layout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/stats_fragment.xml" value="0.24954710144927536" />
+        <entry key="app/src/main/res/layout/streak_layout.xml" value="0.24954710144927536" />
         <entry key="app/src/main/res/layout/trophy_fragment.xml" value="0.25317028985507245" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.26979166666666665" />
         <entry key="app/src/main/res/menu/game_choice.xml" value="0.26979166666666665" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.33" />
         <entry key="app/src/main/res/menu/menu_help.xml" value="0.33" />
-        <entry key="app/src/main/res/menu/options.xml" value="0.22" />
+        <entry key="app/src/main/res/menu/options.xml" value="0.25" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1295" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1295" />
         <entry key="app/src/main/res/xml/root_preferences.xml" value="0.12552083333333333" />

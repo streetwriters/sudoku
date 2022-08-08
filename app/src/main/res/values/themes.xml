@@ -6,7 +6,7 @@
     <item name="colorReverseAccent">@color/white</item>
     <item name="colorBackground">@color/colorPrimary</item>
     <item name="colorScoreBoard">@color/white</item>
-    <item name="colorButtonMainPage">@color/gray</item>
+    <item name="colorButtonMainPage">@color/lightGray</item>
     <item name="colorCellUnselected">@color/white</item>
     <item name="colorCellFixed">@color/lightGray</item>
     <item name="colorCellFixedSelected">@color/cellFixedSelectedLight</item>
@@ -14,8 +14,8 @@
     <item name="colorError">@color/error</item>
     <item name="colorCellMargin">@color/cellMarginLight</item>
     <item name="colorCalenderDisabledText">@color/darkLightGray</item>
-
-
+    <item name="colorButtonText">@color/gray</item>
+    <item name="colorContainerBorder">@color/lightGray</item>
     <item name="colorTertiary">@color/gray</item>
     <item name="colorOnTertiary">@color/lightGray</item>
   </style>
@@ -35,11 +35,11 @@
     <item name="colorError">@color/error</item>
     <item name="colorCellMargin">@color/dark</item>
     <item name="colorCalenderDisabledText">@color/mediumGray</item>
-
+    <item name="colorButtonText">@color/mediumGray</item>
     <item name="android:colorBackground">@color/dark</item>
     <item name="android:textColorPrimary">@color/white</item>
     <item name="android:textColorSecondary">@color/cellFixedSelectedDark</item>
-
+    <item name="colorContainerBorder">@color/gray</item>
 
     <item name="android:background">@color/dark</item>
 

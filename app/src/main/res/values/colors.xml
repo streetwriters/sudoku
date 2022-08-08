@@ -6,9 +6,9 @@
     <color name="cellFixedSelectedLight">#979696</color>
     <color name="cellFixedSelectedDark">#979696</color>
     <color name="error">#FF0000</color>
-    <color name="gray">#DBD9D9</color>
+    <color name="gray">#737373</color>
     <color name="mediumGray">#979696</color>
-    <color name="lightGray">#E9E9E9</color>
+    <color name="lightGray">#f7f7f7</color>
     <color name="boxMargins">#9C9B9B</color>
     <color name="cellMarginLight">#9B7C7B7B</color>
 

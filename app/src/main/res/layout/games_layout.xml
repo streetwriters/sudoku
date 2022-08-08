@@ -24,6 +24,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.4"
             android:gravity="center|start"
+            android:textColor="?colorButtonText"
             android:text="Games Started"
             />
         <TextView
@@ -33,6 +34,7 @@
             android:layout_weight="0.4"
             android:gravity="end|center"
             android:text="0"
+            android:textColor="?colorButtonText"
             android:textStyle="bold"
             android:padding="15dp"/>
 
@@ -54,6 +56,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
+            android:textColor="?colorButtonText"
             android:gravity="center|start"
             android:text="Games Won"
             />
@@ -62,6 +65,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
+            android:textColor="?colorButtonText"
             android:gravity="end|center"
             android:text="0"
             android:textStyle="bold"
@@ -84,6 +88,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
+            android:textColor="?colorButtonText"
             android:gravity="center|start"
             android:text="Win Rate"
             />
@@ -94,6 +99,7 @@
             android:layout_weight="0.4"
             android:gravity="end|center"
             android:text="0"
+            android:textColor="?colorButtonText"
             android:textStyle="bold"
             android:padding="15dp"/>
 
@@ -114,6 +120,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
+            android:textColor="?colorButtonText"
             android:gravity="center|start"
             android:text="Win Rate This Week"
             />
@@ -123,6 +130,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.4"
             android:gravity="end|center"
+            android:textColor="?colorButtonText"
             android:text="0"
             android:textStyle="bold"
             android:padding="15dp"/>
