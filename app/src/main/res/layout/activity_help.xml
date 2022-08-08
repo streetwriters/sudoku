@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/app_bar_height"
         android:fitsSystemWindows="true"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppThemeLight.AppBarOverlay">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/toolbar_layout"
@@ -20,7 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
+            app:contentScrim="?colorBackground"
+            android:background="?colorBackground"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@+id/toolbar">
 
@@ -29,20 +30,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
+                app:popupTheme="@style/AppThemeLight.PopupOverlay" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_scrolling" />
-
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        android:id="@+id/fab"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginEnd="@dimen/fab_margin"-->
-<!--        app:layout_anchor="@id/app_bar"-->
-<!--        app:layout_anchorGravity="bottom|end"-->
-<!--        app:srcCompat="@android:drawable/ic_dialog_email" />-->
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

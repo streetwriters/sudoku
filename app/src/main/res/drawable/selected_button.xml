@@ -4,10 +4,10 @@
         <shape >
 
             <solid
-                android:color="#DBD9D9"/>
+                android:color="?colorGridSelected"/>
             <stroke
-                android:width="0.1dp"
-                android:color="#9B7C7B7B" />
+                android:width="@dimen/sizeCellMargin"
+                android:color="?colorCellMargin" />
             <corners
                 android:radius="0dp" />
             <padding

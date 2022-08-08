@@ -1,11 +1,13 @@
 package com.streetwriters.sudoku.Functions;
 
+
 import android.graphics.Color;
 import android.view.View;
 
 import com.streetwriters.sudoku.Functions.Utils.Digits;
 import com.streetwriters.sudoku.Functions.Utils.Dimensions;
 import com.streetwriters.sudoku.Functions.Utils.Singletons.GameState;
+import com.streetwriters.sudoku.R;
 import com.streetwriters.sudoku.View.Layouts.CellLayout;
 
 import java.util.ArrayList;
@@ -77,11 +79,11 @@ public class Highlight {
             if (selection.isActiveCellPresent(activeCell)) {
                 activeCellLayout.setSelectedCellBackground();
                 activeCellLayout.setSelectedCellViewBackground();
-                activeCellLayout.setCellTextColor(Color.BLACK);
-                activeCellLayout.setNotesTextColor(Color.BLACK);
+                activeCellLayout.setCellTextColor(R.attr.colorAccent);
+                activeCellLayout.setNotesTextColor(R.attr.colorAccent);
             } else {
-                activeCellLayout.setCellTextColor(Color.BLACK);
-                activeCellLayout.setNotesTextColor(Color.BLACK);
+                activeCellLayout.setCellTextColor(R.attr.colorAccent);
+                activeCellLayout.setNotesTextColor(R.attr.colorAccent);
             }
 
             for (int index = 0; index < gameState.previousHighlightedCells().size(); index++) {

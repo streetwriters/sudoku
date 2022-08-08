@@ -9,10 +9,12 @@ import android.util.Log;
 import com.streetwriters.sudoku.Functions.Utils.Digits;
 import com.streetwriters.sudoku.Functions.Utils.Dimensions;
 import com.streetwriters.sudoku.Functions.Utils.Singletons.GameState;
+import com.streetwriters.sudoku.Functions.Utils.Singletons.UseGameState;
+import com.streetwriters.sudoku.R;
 import com.streetwriters.sudoku.View.Layouts.CellLayout;
 import com.streetwriters.sudoku.View.Layouts.TextLayout;
 
-public class CheckErrors {
+public class CheckErrors extends UseGameState {
     GameState gameState = GameState.getInstance();
     int[][] solvedPuzzle = gameState.getSolvedPuzzle();
     int[][] userSolvedPuzzle = gameState.getUserSolvedPuzzle();
@@ -23,7 +25,7 @@ public class CheckErrors {
         CellLayout cellLayout = new CellLayout(activity, gameState.getActiveCellId());
         //Log.d(CheckErrors.class.getSimpleName(), "check: error: " + error);
         if (error) {
-            cellLayout.setCellTextColor(Color.RED);
+            cellLayout.setCellTextColor(R.attr.colorError);
             new TextLayout(activity).addMistake();
         } else {
             ColorStateList colorList = cellLayout.getCell().getTextColors();

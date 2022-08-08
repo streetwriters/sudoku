@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.15"
-            android:textColor="#FFF"
+            android:textColor="?colorAccent"
             android:textSize="20dp"/>
 
         <ImageView
@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.15"
-            android:textColor="#FFF"/>
+            android:textColor="?colorAccent"/>
 
     </LinearLayout>
 
@@ -58,9 +58,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:mcv_showOtherDates="decorated_disabled"
-        app:mcv_selectionColor="#FFF"
+        app:mcv_selectionColor="?colorPrimary"
         app:mcv_tileHeight="20dp"
         app:mcv_tileWidth="45dp"
+        app:mcv_weekDayTextAppearance="@style/CustomWeekTextAppearance"
         app:mcv_dateTextAppearance="@style/CustomTextAppearance"
         android:visibility="gone"
         />

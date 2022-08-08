@@ -1,7 +1,9 @@
 package com.streetwriters.sudoku.Activities.Fragments;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -16,7 +18,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import com.streetwriters.sudoku.Activities.GameActivity;
@@ -79,12 +80,12 @@ public class HomeFragment extends Fragment {
 //            resumeBtn.setVisibility(View.GONE);
 //        }
 
-        AppCompatButton helpButton = view.findViewById(R.id.main_help);
+        AppCompatButton rateButton = view.findViewById(R.id.main_rate_us);
 
-        helpButton.setOnClickListener(new View.OnClickListener() {
+        rateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(activity, Help.class));
+                openLink("market://details?id=" +  getActivity().getPackageName());
             }
         });
 
@@ -116,5 +117,16 @@ public class HomeFragment extends Fragment {
         }
 
         return super.onContextItemSelected(item);
+    }
+
+    private void openLink(String link) {
+        Uri uri = Uri.parse(link);
+        Intent myAppLinkToMarket = new Intent(Intent.ACTION_VIEW, uri);
+        try {
+            startActivity(myAppLinkToMarket);
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(getActivity(), " unable to find market app", Toast.LENGTH_LONG).show();
+            Log.d("TEST1", "launchMarket: "+e.getMessage());
+        }
     }
 }

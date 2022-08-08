@@ -4,7 +4,7 @@
         <shape >
 
             <solid
-                android:color="#ECEBEB"/>
+                android:color="?colorSecondary"/>
             <corners
                 android:radius="10dp" />
             <padding
@@ -19,7 +19,7 @@
         <shape >
 
             <solid
-                android:color="#FFFFFF"/>
+                android:color="?colorButtonMainPage"/>
             <corners
                 android:radius="10dp" />
             <padding

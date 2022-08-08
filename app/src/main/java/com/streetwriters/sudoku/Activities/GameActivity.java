@@ -1,41 +1,28 @@
 package com.streetwriters.sudoku.Activities;
 
-import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.streetwriters.sudoku.Functions.Utils.AppState;
+import com.streetwriters.sudoku.Functions.Utils.ChangeTheme;
 import com.streetwriters.sudoku.Functions.Utils.Singletons.LoadGameState;
+import com.streetwriters.sudoku.Functions.Utils.Sounds;
 import com.streetwriters.sudoku.R;
-import com.streetwriters.sudoku.Controller.Dialogs.QuitGameDialog;
 import com.streetwriters.sudoku.Controller.Play;
 import com.streetwriters.sudoku.Controller.GameController;
 import com.streetwriters.sudoku.Functions.SudukoTimer;
 import com.streetwriters.sudoku.Functions.Utils.Singletons.GameState;
 
 import com.streetwriters.sudoku.View.Ui.RewardedAd;
-import com.unity3d.ads.IUnityAdsInitializationListener;
-import com.unity3d.ads.IUnityAdsLoadListener;
-import com.unity3d.ads.IUnityAdsShowListener;
-import com.unity3d.ads.UnityAds;
-import com.unity3d.ads.UnityAdsShowOptions;
-
-
-/*
- * Classes to be changed;
- * Game//
- * CheckErrors
- * Remove Class style
- * Clean intentData, puzzle data etc classes
- * Clean stats class
- * */
 
 public class GameActivity extends AppCompatActivity {
 
@@ -48,6 +35,7 @@ public class GameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ChangeTheme.onActivityCreateSetTheme(this);
         setContentView(R.layout.activity_game);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -63,6 +51,8 @@ public class GameActivity extends AppCompatActivity {
 
           RewardedAd rewardedAd = new RewardedAd(this);
           gameState.setRewardedAd(rewardedAd);
+
+          new AppState().setSoundEffects();
     }
 
 
@@ -77,6 +67,7 @@ public class GameActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.option_play_pause) {
+         new Sounds().playSound(R.raw.keypress,this);
             if (sudukoTimer.timer) {
                 sudukoTimer.T.cancel();
                 sudukoTimer.timer = false;

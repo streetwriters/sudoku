@@ -6,6 +6,7 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.widget.LinearLayout;
 
+import com.streetwriters.sudoku.Functions.Utils.Properties;
 import com.streetwriters.sudoku.R;
 
 public class Cell extends Button{
@@ -16,6 +17,7 @@ public class Cell extends Button{
         setTypeFace("quicksand.ttf");
         setId(R.id.cell);
         setClickable(false);
+        setTextColor(new Properties().getThemeColor(R.attr.colorAccent,context));
         setText("");
         setParameters(LinearLayout.LayoutParams.MATCH_PARENT,0,1f);
     }

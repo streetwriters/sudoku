@@ -56,7 +56,7 @@ public class GameCompleteDialog extends DialogHelper {
         new Data().deleteGameFile();
     }
 
-    private void openLink(String link) {
+    private void openLink(String link) { // should be moved somewhere else
         Uri uri = Uri.parse(link);
         Intent myAppLinkToMarket = new Intent(Intent.ACTION_VIEW, uri);
         try {

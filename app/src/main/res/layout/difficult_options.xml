@@ -6,19 +6,19 @@
         android:id="@+id/easy_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#FFF"
+        android:backgroundTint="?colorSecondary"
         android:text="EASY"/>
     <Button
         android:id="@+id/medium_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#FFF"
+        android:backgroundTint="?colorSecondary"
         android:text="MEDIUM"/>
     <Button
         android:id="@+id/hard_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#FFF"
+        android:backgroundTint="?colorSecondary"
         android:text="HARD"/>
 
 

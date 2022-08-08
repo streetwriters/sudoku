@@ -27,6 +27,7 @@ public class EditPadOnClick extends ButtonOnClick implements View.OnClickListene
     @Override
     public void onClick(View view) {
         final int id = view.getId();
+        playSound(R.raw.keypress,context);
 
         if (id == R.id.undo) {
             undo();
@@ -43,6 +44,7 @@ public class EditPadOnClick extends ButtonOnClick implements View.OnClickListene
         ArrayList<HistoryItem> userHistory = gameState.getUserHistory();
 
         if (userHistory.size() > 0) {
+            //playSound(android.media.MediaPlayer.Cl,context).start();
             HistoryItem historyItem = userHistory.get(userHistory.size() - 1);
             CellLayout cellLayout = new CellLayout(context, historyItem.getCellId());
 
@@ -90,9 +92,9 @@ public class EditPadOnClick extends ButtonOnClick implements View.OnClickListene
                     new EditPadLayout(context).setHintIcon(gameState.getHints());
                 }
             }
-        } else
-            Toast.makeText(context, "Can't perform this Action.", Toast.LENGTH_SHORT).show();
-        //}
+        } else{
+            Toast.makeText(context, "Can't display hints when taking notes", Toast.LENGTH_SHORT).show();
+        }
         // }
     }
 

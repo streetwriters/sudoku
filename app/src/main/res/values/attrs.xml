@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorBackground" format="reference"/>
+    <attr name="colorScoreBoard" format="reference"/>
+    <attr name="colorButtonMainPage" format="reference"/>
+    <attr name="colorCellUnselected" format="reference"/>
+    <attr name="colorCellFixed" format="reference"/>
+    <attr name="colorCellFixedSelected" format="reference"/>
+    <attr name="colorGridSelected" format="reference"/>
+    <attr name="colorCellMargin" format="reference"/>
+    <attr name="colorReverseAccent" format="reference"/>
+    <attr name="colorCalenderDisabledText" format="reference"/>
+
+    <attr name="customStyle" format="reference"></attr>
+
+</resources>

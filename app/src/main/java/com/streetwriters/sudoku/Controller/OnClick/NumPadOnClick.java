@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.streetwriters.sudoku.Functions.History;
 import com.streetwriters.sudoku.Functions.Utils.Digits;
 import com.streetwriters.sudoku.Functions.Utils.Dimensions;
+import com.streetwriters.sudoku.R;
 import com.streetwriters.sudoku.View.Buttons.NumPadButton;
 import com.streetwriters.sudoku.View.Layouts.CellLayout;
 
@@ -26,6 +27,7 @@ public class NumPadOnClick extends ButtonOnClick implements View.OnClickListener
         int text = Integer.parseInt(((NumPadButton) view).getText().toString());
         if(!gameState.isGameFinished())
         if (!isActiveCellClue()) {
+            playSound(R.raw.keypress,context);
             cellLayout = new CellLayout(context, gameState.getActiveCellId());
             setButtonVisibility(cellLayout);
 
@@ -63,7 +65,7 @@ public class NumPadOnClick extends ButtonOnClick implements View.OnClickListener
                 cellClick(text);
             }
         } else {
-            Toast.makeText(context, "Can't perform this Action.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "You can't Edit Clues", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -79,5 +81,6 @@ public class NumPadOnClick extends ButtonOnClick implements View.OnClickListener
             cellLayout.setNoteText(identifier);
             gameState.getNotes()[digits.first()][digits.second()].add(identifier);
         }
+        //playSound(R.raw.click,context).start();
     }
 }

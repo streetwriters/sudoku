@@ -10,15 +10,15 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay"
+        android:theme="@style/AppThemeLight.AppBarOverlay"
         app:elevation="0dp">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:background="?colorBackground"
+            app:popupTheme="@style/AppThemeLight.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -35,7 +35,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Easy"
-            android:textColor="#FFF"
+            android:textColor="?colorScoreBoard"
             android:gravity="center_vertical"
             android:paddingLeft="20dp"/>
 
@@ -45,7 +45,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Mistakes:0/3"
-            android:textColor="#FFF"
+            android:textColor="?colorScoreBoard"
             android:gravity="center"/>
 
         <TextView
@@ -54,7 +54,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="00:00:00"
-            android:textColor="#FFF"
+            android:textColor="?colorScoreBoard"
             android:gravity="center_vertical"
             android:paddingLeft="60dp"
             />

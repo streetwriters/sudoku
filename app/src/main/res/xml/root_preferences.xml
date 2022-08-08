@@ -1,23 +1,30 @@
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
+    <PreferenceCategory>
+        <SwitchPreference
+            app:allowDividerBelow="true"
+            app:defaultValue="true"
+            app:key="sound"
+            app:title="@string/sound_pref_title"
+            app:summary="@string/sound_summary"
+            />
+    </PreferenceCategory>
     <PreferenceCategory >
-
         <Preference
             app:key="share"
-            app:title="@string/share_pref"
+            app:title="@string/share_pref_title"
             app:summary="@string/share_summary"/>
         <Preference
             app:key="rate"
-            app:title="@string/rate_us_pref"
+            app:title="@string/rate_us_pref_title"
             app:summary="@string/rate_summary"/>
         <Preference
             app:key="privacy"
-            app:title="@string/privacy_policy_pref"
+            app:title="@string/privacy_policy_pref_title"
             app:summary="@string/privacy_summary"/>
         <Preference
             app:key="about"
-            app:title="@string/about_us_pref"
+            app:title="@string/about_us_pref_title"
             app:summary="@string/about_summary"/>
     </PreferenceCategory>
 

@@ -20,6 +20,7 @@ public class TextLayout {
     public void arrange(){
         setDifficulty();
         setMistakes(gameState.getMistakes());
+        setTimer(gameState.getGameTimer());
     }
 
     public void setDifficulty(){

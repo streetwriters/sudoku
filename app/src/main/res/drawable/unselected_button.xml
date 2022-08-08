@@ -3,10 +3,10 @@
     <item >
         <shape >
             <solid
-                android:color="#fff"/>
+                android:color="?attr/colorCellUnselected"/>
             <stroke
-                android:width="0.1dp"
-                android:color="#9B7C7B7B" />
+                android:width="@dimen/sizeCellMargin"
+                android:color="?colorCellMargin" />
             <corners
                 android:radius="0dp" />
             <padding

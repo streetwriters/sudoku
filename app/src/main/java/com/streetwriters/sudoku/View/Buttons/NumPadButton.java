@@ -1,11 +1,11 @@
 package com.streetwriters.sudoku.View.Buttons;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.util.TypedValue;
 import android.widget.LinearLayout;
 
+import com.streetwriters.sudoku.Functions.Utils.Properties;
 import com.streetwriters.sudoku.R;
 
 public class NumPadButton extends Button{
@@ -13,7 +13,7 @@ public class NumPadButton extends Button{
         super(context);
         setParameters();
         setTextSize(TypedValue.COMPLEX_UNIT_DIP, 30);
-        setTextColor(Color.BLACK);
+        setTextColor(new Properties().getThemeColor(R.attr.colorAccent,context));
         setBackground(getResources().getDrawable(R.drawable.editing_button_bakcground));
         setTypeFace("quicksand.ttf");
     }

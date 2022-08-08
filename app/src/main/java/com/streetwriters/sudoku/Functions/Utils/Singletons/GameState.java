@@ -36,6 +36,7 @@ public class GameState {
     private Boolean gameFinished = false;
     private RewardedAd rewardedAd;
     private Boolean isAdTypeHint = true;
+    private boolean soundEffects =true;
 
 
     private GameState(){
@@ -253,6 +254,14 @@ public class GameState {
 
     public Boolean isAdTypeHint() {
         return isAdTypeHint;
+    }
+
+    public void setSoundEffects(boolean soundEffects) {
+        this.soundEffects = soundEffects;
+    }
+
+    public boolean isSoundEffects() {
+        return soundEffects;
     }
 
     public void resetSingleton(){

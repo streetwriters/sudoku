@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="notes_text_size">12.5dp</dimen>
-
+  <dimen name="sizeCellMargin">0.25dp</dimen>
 </resources>

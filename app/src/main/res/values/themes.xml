@@ -1,3 +1,67 @@
 <resources>
+  <style name="AppThemeLight" parent="Theme.AppCompat.Light.DarkActionBar">
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorSecondary">@color/white</item>
+    <item name="colorAccent">@color/black</item>
+    <item name="colorReverseAccent">@color/white</item>
+    <item name="colorBackground">@color/colorPrimary</item>
+    <item name="colorScoreBoard">@color/white</item>
+    <item name="colorButtonMainPage">@color/gray</item>
+    <item name="colorCellUnselected">@color/white</item>
+    <item name="colorCellFixed">@color/lightGray</item>
+    <item name="colorCellFixedSelected">@color/cellFixedSelectedLight</item>
+    <item name="colorGridSelected">@color/gray</item>
+    <item name="colorError">@color/error</item>
+    <item name="colorCellMargin">@color/cellMarginLight</item>
+    <item name="colorCalenderDisabledText">@color/darkLightGray</item>
 
+
+    <item name="colorTertiary">@color/gray</item>
+    <item name="colorOnTertiary">@color/lightGray</item>
+  </style>
+
+  <style name="AppThemeDark" parent="Theme.AppCompat.Light.DarkActionBar">
+    <item name="colorPrimary">@color/colorPrimaryDark</item>
+    <item name="colorSecondary">@color/dark</item>
+    <item name="colorAccent">@color/white</item>
+    <item name="colorReverseAccent">@color/black</item>
+    <item name="colorBackground">@color/dark</item>
+    <item name="colorScoreBoard">@color/white</item>
+    <item name="colorButtonMainPage">@color/darkGray</item>
+    <item name="colorCellUnselected">@color/darkGray</item>
+    <item name="colorCellFixed">@color/darkLightGrayVariant</item>
+    <item name="colorCellFixedSelected">@color/cellFixedSelectedDark</item>
+    <item name="colorGridSelected">@color/darkLightGray</item>
+    <item name="colorError">@color/error</item>
+    <item name="colorCellMargin">@color/dark</item>
+    <item name="colorCalenderDisabledText">@color/mediumGray</item>
+
+    <item name="android:colorBackground">@color/dark</item>
+    <item name="android:textColorPrimary">@color/white</item>
+    <item name="android:textColorSecondary">@color/cellFixedSelectedDark</item>
+
+
+    <item name="android:background">@color/dark</item>
+
+
+
+    <item name="colorTertiary">@color/darkLightGray</item>
+    <item name="colorOnTertiary">@color/darkLightGrayVariant</item>
+  </style>
+
+  <style name="AppThemeLight.NoActionBar">
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+  </style>
+
+  <style name="AppThemeDark.NoActionBar">
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+  </style>
+
+  <style name="AppThemeLight.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+  <style name="AppThemeLight.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
+
+

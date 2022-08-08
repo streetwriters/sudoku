@@ -15,6 +15,7 @@ public class ImageButton extends AppCompatImageButton {
         super(context);
         setCenterTextAlignment();
         setZeroPadding();
+        setSoundEffectsEnabled(false);
     }
     public void setCenterTextAlignment(){
         setTextAlignment(View.TEXT_ALIGNMENT_CENTER);

@@ -2,6 +2,7 @@ package com.streetwriters.sudoku.Functions.Utils.Singletons;
 
 import android.app.Activity;
 
+import com.streetwriters.sudoku.Controller.Stats;
 import com.streetwriters.sudoku.Functions.InitializeArrays;
 import com.streetwriters.sudoku.Functions.CellGroups;
 import com.streetwriters.sudoku.Functions.FetchData.Data;
@@ -69,6 +70,8 @@ public class LoadGameState {
         gameState.setBoxes(cellGroups.getBoxes());
         gameState.setMatchingCells(cellGroups.getMatchingCells());
         gameState.setStartTime(System.currentTimeMillis());
+
+        Stats scoreBoard = new Stats(gameState.getMistakes(), activity, -1);
     }
 
     public void setChallengeGameData() {

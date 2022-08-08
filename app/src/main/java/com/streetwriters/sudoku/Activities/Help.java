@@ -11,6 +11,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 
+import com.streetwriters.sudoku.Functions.Utils.ChangeTheme;
 import com.streetwriters.sudoku.databinding.ActivityHelpBinding;
 
 public class Help extends AppCompatActivity {
@@ -20,6 +21,7 @@ public class Help extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ChangeTheme.onActivityCreateSetTheme(this);
 
         binding = ActivityHelpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

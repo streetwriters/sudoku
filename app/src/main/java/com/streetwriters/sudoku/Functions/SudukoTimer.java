@@ -1,6 +1,7 @@
 package com.streetwriters.sudoku.Functions;
 
 import android.app.Activity;
+import android.util.Log;
 
 import com.streetwriters.sudoku.Functions.Utils.Singletons.GameState;
 import com.streetwriters.sudoku.View.Layouts.TextLayout;
@@ -33,6 +34,7 @@ public class SudukoTimer {
                         new TextLayout(activity).setTimer(count);
 
                         gameState.setGameTimer(gameState.getGameTimer()+1);
+                        Log.d(SudukoTimer.class.getName(), "TIMER: "+gameState.getGameTimer());
 
                     }
                 });

@@ -16,6 +16,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.streetwriters.sudoku.BuildConfig;
+import com.streetwriters.sudoku.Functions.Utils.ChangeTheme;
 import com.streetwriters.sudoku.R;
 
 public class SettingsActivity extends AppCompatActivity {
@@ -23,6 +24,7 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ChangeTheme.onActivityCreateSetTheme(this);
         setContentView(R.layout.settings_activity);
         if (savedInstanceState == null) {
             getSupportFragmentManager()

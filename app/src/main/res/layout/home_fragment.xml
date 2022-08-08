@@ -6,7 +6,7 @@
     android:weightSum="1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="?colorSecondary"
     android:id="@+id/home_fragment">
 
     <LinearLayout
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:textSize="25dp"
             android:text="Sudoku"
-            android:textColor="#FFF"
+            android:textColor="?colorPrimary"
             android:textStyle="bold"
             android:textAlignment="center"
             />
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="?colorPrimary"
             android:background="@drawable/main_button"
             android:text="NEW GAME"
             android:textSize="20dp"/>
@@ -59,21 +59,21 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
-            android:textColor="#000"
+            android:textColor="?colorAccent"
             android:background="@drawable/main_button"
             android:text="RESUME GAME"
             android:textSize="15dp"
             android:layout_marginTop="20dp"
             />
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/main_help"
+            android:id="@+id/main_rate_us"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
-            android:textColor="#000"
+            android:textColor="?colorAccent"
             android:background="@drawable/main_button"
-            android:text="How To Play"
+            android:text="Rate us"
             android:textSize="15dp"
             android:layout_marginTop="20dp"
             />

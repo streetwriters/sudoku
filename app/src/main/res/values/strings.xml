@@ -33,16 +33,18 @@
 
     <!--settings -->
     <string name="title_activity_settings">Settings</string>
-    <string name="share_pref">Share</string>
-    <string name="rate_us_pref">Rate Us</string>
-    <string name="privacy_policy_pref">Privacy Policy</string>
-    <string name="about_us_pref">About Us</string>
+    <string name="share_pref_title">Share</string>
+    <string name="rate_us_pref_title">Rate Us</string>
+    <string name="privacy_policy_pref_title">Privacy Policy</string>
+    <string name="about_us_pref_title">About Us</string>
+    <string name="sound_pref_title">Sound Effects</string>
 
     <!--setting summary-->
     <string name="share_summary">Share Sudoku with your friends and family</string>
     <string name="rate_summary">Tell us what you think about Sudoku</string>
     <string name="about_summary">Version 1.0</string>
     <string name="privacy_summary">Read our Privacy Policy</string>
+    <string name="sound_summary">"Disable or Enable Sound Effects</string>
 
     <!--strings -->
     <string name="market_error">Couldn\'t launch market</string>
@@ -54,8 +56,8 @@
         "The puzzle setter provides a partially completed grid"
         "which has one solution.\n\n"
 
-        "You can use notes to make your guess.\n"
-        "You can use hints in solving difficult parts of the puzzle.\n"
+        "You can use notes to make guesses."
+        "You can use hints to solve difficult parts of the puzzle.\n"
     </string>
     <string name="action_settings">Settings</string>
 

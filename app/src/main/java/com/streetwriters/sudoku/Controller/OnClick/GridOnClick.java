@@ -9,6 +9,7 @@ import com.streetwriters.sudoku.Functions.CellGroups;
 import com.streetwriters.sudoku.Functions.Highlight;
 import com.streetwriters.sudoku.Functions.Position;
 import com.streetwriters.sudoku.Functions.Utils.Singletons.UseGameState;
+import com.streetwriters.sudoku.R;
 import com.streetwriters.sudoku.View.Layouts.CellLayout;
 
 
@@ -27,6 +28,8 @@ public class GridOnClick extends UseGameState implements View.OnTouchListener {
         this.view = view;
         if (!position.isUnchanged(previousPositionX, previousPositionY))
             if (position.isWithinLimits()) {
+                //view.playSoundEffect(android.view.SoundEffectConstants.CLICK);
+                playSound(R.raw.keypress,view.getContext());
                 if (isClue(position.Y(),position.X())) {
                     fixedCellClick(position.X(), position.Y());
                 } else {
@@ -48,10 +51,10 @@ public class GridOnClick extends UseGameState implements View.OnTouchListener {
         CellLayout cellLayout = new CellLayout(view.getContext(), id);
         cellLayout.setActiveCellBackground();
         cellLayout.setActiveCellViewBackground();
-        cellLayout.setCellTextColor(Color.WHITE);
+        cellLayout.setCellTextColor(R.attr.colorReverseAccent);
         //cellLayout.setNotesTextColor(Color.BLACK);
         gameState.setActiveCellId(id);
-        cellLayout.setNotesTextColor(Color.WHITE);
+        cellLayout.setNotesTextColor(R.attr.colorReverseAccent);
 
         if (cellLayout.isCellFilled()&&cellLayout.isCellValueTrue()) {
             new CellGroups().updateActiveMatchingCells(Integer.parseInt(cellLayout.getCellText()));

@@ -8,6 +8,8 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.streetwriters.sudoku.Activities.Fragments.HomeFragment;
 import com.streetwriters.sudoku.Activities.Fragments.StatsFragment;
 import com.streetwriters.sudoku.Activities.Fragments.TrophyFragment;
+import com.streetwriters.sudoku.Functions.Utils.AppState;
+import com.streetwriters.sudoku.Functions.Utils.ChangeTheme;
 import com.streetwriters.sudoku.R;
 
 import androidx.annotation.NonNull;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ChangeTheme.onActivityCreateSetTheme(this);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -45,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
         if(id ==R.id.settings){
             Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
+        }else if(id == R.id.option_night_mode){
+            if(new AppState().getTheme()==1){
+                ChangeTheme.changeToTheme(this, ChangeTheme.THEME_DEFAULT);
+            }else {
+                ChangeTheme.changeToTheme(this, ChangeTheme.THEME_NIGHT);
+            }
         }
         return super.onOptionsItemSelected(item);
     }

@@ -11,6 +11,7 @@ import com.streetwriters.sudoku.Functions.CheckErrors;
 import com.streetwriters.sudoku.Functions.GameCompletion;
 import com.streetwriters.sudoku.Functions.History;
 import com.streetwriters.sudoku.Functions.Utils.Singletons.UseGameState;
+import com.streetwriters.sudoku.R;
 import com.streetwriters.sudoku.View.Layouts.CellLayout;
 
 import java.util.ArrayList;
@@ -43,7 +44,7 @@ public class ButtonOnClick extends UseGameState {
         }
     }
 
-    public void eraseNote(Integer noteText) {
+    protected void eraseNote(Integer noteText) {
         CellLayout cellLayout = new CellLayout(context, gameState.getActiveCellId());
         if (gameState.getActiveCellId()>-1) {
             cellLayout.eraseNote(noteText);
@@ -51,7 +52,7 @@ public class ButtonOnClick extends UseGameState {
         }
     }
 
-    public void eraseCell(CellLayout cellLayout) {
+    private void eraseCell(CellLayout cellLayout) {
         if (cellLayout.isCellPresent())
             if (cellLayout.isCellFilled()) {
                 new CellGroups().removeMatchingCell(Integer.parseInt(cellLayout.getCellText()), gameState.getActiveCellId());

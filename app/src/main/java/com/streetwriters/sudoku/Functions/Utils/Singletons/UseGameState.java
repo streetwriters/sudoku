@@ -2,10 +2,14 @@ package com.streetwriters.sudoku.Functions.Utils.Singletons;
 
 import android.app.Activity;
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.util.Log;
+
+import androidx.annotation.RawRes;
 
 import com.streetwriters.sudoku.Functions.Utils.Digits;
 import com.streetwriters.sudoku.Functions.Utils.Dimensions;
+import com.streetwriters.sudoku.Functions.Utils.Sounds;
 import com.streetwriters.sudoku.View.Layouts.CellLayout;
 
 import java.util.ArrayList;
@@ -61,8 +65,23 @@ public abstract class UseGameState {
         return gameState.getUnSolvedPuzzle()[i][j] != 0;
     }
 
-    public Boolean isCellFilled(int i,int j){
+    protected Boolean isCellFilled(int i,int j){
         return gameState.getUserSolvedPuzzle()[i][j] != 0;
+    }
+
+    protected void playSound(@RawRes int id,Context context){
+//        MediaPlayer mp = MediaPlayer.create(context, id);
+//        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+//            @Override
+//            public void onCompletion(MediaPlayer mp) {
+//                // TODO Auto-generated method stub
+//                //mp.reset();
+//                mp.release();
+//                //mp=null;
+//            }
+//        });
+//        return mp;
+        new Sounds().playSound(id,context);
     }
 
 }

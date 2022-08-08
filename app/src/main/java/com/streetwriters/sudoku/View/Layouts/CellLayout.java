@@ -155,11 +155,11 @@ public class CellLayout {
     }
 
     public void setMatchingCellBackground() {
-        ((Cell) cellView.findViewById(R.id.cell)).setBackgroundResource(R.drawable.occurence_button);
+        ((Cell) cellView.findViewById(R.id.cell)).setBackgroundResource(R.drawable.fixed_cell_selected);
     }
 
     public void setFixedCellBackground() {
-        ((Cell) cellView.findViewById(R.id.cell)).setBackgroundResource(R.drawable.static_button);
+        ((Cell) cellView.findViewById(R.id.cell)).setBackgroundResource(R.drawable.fixed_cell);
     }
 
     public void setCellViewBackground() {
@@ -170,7 +170,7 @@ public class CellLayout {
         if (cellView.findViewById(R.id.cell) != null) {
             ColorStateList colors = ((Cell) cellView.findViewById(R.id.cell)).getTextColors();
             if (colors.getDefaultColor() != Color.RED)
-                ((Cell) cellView.findViewById(R.id.cell)).setTextColor(color);
+                ((Cell) cellView.findViewById(R.id.cell)).setTextColor(new Properties().getThemeColor(color,cellView.getContext()));
         }
     }
 
@@ -191,7 +191,7 @@ public class CellLayout {
 
     public void setNoteTextColor(int noteId, int color) {
         if (cellView.findViewById(noteId) != null)
-            ((TextView) cellView.findViewById(noteId)).setTextColor(color);
+            ((TextView) cellView.findViewById(noteId)).setTextColor(new Properties().getThemeColor(color,context));
     }
 
     public void setNotesTextColor(int color) {

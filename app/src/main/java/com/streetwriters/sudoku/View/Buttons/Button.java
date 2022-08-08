@@ -15,6 +15,7 @@ public class Button extends AppCompatButton {
         super(context);
         setCenterTextAlignment();
         setZeroPadding();
+        setSoundEffectsEnabled(false);
     }
 
     void setCenterTextAlignment(){
