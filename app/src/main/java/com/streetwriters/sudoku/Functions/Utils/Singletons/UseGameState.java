@@ -69,7 +69,7 @@ public abstract class UseGameState {
         return gameState.getUserSolvedPuzzle()[i][j] != 0;
     }
 
-    protected void playSound(@RawRes int id,Context context){
+    protected void playSound(Context context){
 //        MediaPlayer mp = MediaPlayer.create(context, id);
 //        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 //            @Override
@@ -81,7 +81,7 @@ public abstract class UseGameState {
 //            }
 //        });
 //        return mp;
-        new Sounds().playSound(id,context);
+        new Sounds().playSound(context);
     }
 
 }

@@ -9,7 +9,7 @@ import androidx.annotation.RawRes;
 import com.streetwriters.sudoku.Functions.Utils.Singletons.GameState;
 
 public class Sounds {
-     public void playSound(@RawRes int id, Context context){
+     public void playSound(Context context){
          if(GameState.getInstance().isSoundEffects()) {
 //             MediaPlayer mp = MediaPlayer.create(context, id);
 //             mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {

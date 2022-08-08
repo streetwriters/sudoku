@@ -67,7 +67,7 @@ public class GameActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.option_play_pause) {
-         new Sounds().playSound(R.raw.keypress,this);
+         new Sounds().playSound(this);
             if (sudukoTimer.timer) {
                 sudukoTimer.T.cancel();
                 sudukoTimer.timer = false;

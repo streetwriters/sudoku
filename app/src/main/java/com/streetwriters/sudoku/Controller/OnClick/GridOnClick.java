@@ -29,7 +29,7 @@ public class GridOnClick extends UseGameState implements View.OnTouchListener {
         if (!position.isUnchanged(previousPositionX, previousPositionY))
             if (position.isWithinLimits()) {
                 //view.playSoundEffect(android.view.SoundEffectConstants.CLICK);
-                playSound(R.raw.keypress,view.getContext());
+                playSound(view.getContext());
                 if (isClue(position.Y(),position.X())) {
                     fixedCellClick(position.X(), position.Y());
                 } else {

@@ -2,6 +2,7 @@ package com.streetwriters.sudoku.Functions.Utils;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 
 import com.streetwriters.sudoku.Activities.GameActivity;
 import com.streetwriters.sudoku.Functions.Utils.Singletons.LoadGameState;
@@ -34,7 +35,28 @@ public class ChangeTheme {
      * Set the theme of the activity, according to the configuration.
      */
     public static void onActivityCreateSetTheme(Activity activity) {
+
+        int nightModeFlags =
+                activity.getResources().getConfiguration().uiMode &
+                        Configuration.UI_MODE_NIGHT_MASK;
+        switch (nightModeFlags) {
+            case Configuration.UI_MODE_NIGHT_YES:
+                activity.setTheme(R.style.AppThemeDark_NoActionBar);
+                break;
+
+            case Configuration.UI_MODE_NIGHT_NO:
+                activity.setTheme(R.style.AppThemeLight_NoActionBar);
+                break;
+
+            case Configuration.UI_MODE_NIGHT_UNDEFINED:
+                setCustomTheme(activity);
+                break;
+        }
+    }
+
+   private static void setCustomTheme(Activity activity){
         sTheme = new AppState().getTheme();
+
         switch (sTheme) {
             case THEME_DEFAULT:
                 activity.setTheme(R.style.AppThemeLight_NoActionBar);

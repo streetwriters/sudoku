@@ -27,7 +27,7 @@ public class NumPadOnClick extends ButtonOnClick implements View.OnClickListener
         int text = Integer.parseInt(((NumPadButton) view).getText().toString());
         if(!gameState.isGameFinished())
         if (!isActiveCellClue()) {
-            playSound(R.raw.keypress,context);
+            playSound(context);
             cellLayout = new CellLayout(context, gameState.getActiveCellId());
             setButtonVisibility(cellLayout);
 

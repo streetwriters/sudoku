@@ -27,7 +27,7 @@ public class EditPadOnClick extends ButtonOnClick implements View.OnClickListene
     @Override
     public void onClick(View view) {
         final int id = view.getId();
-        playSound(R.raw.keypress,context);
+        playSound(context);
 
         if (id == R.id.undo) {
             undo();
