@@ -36,22 +36,23 @@ public class ChangeTheme {
      */
     public static void onActivityCreateSetTheme(Activity activity) {
 
-        int nightModeFlags =
-                activity.getResources().getConfiguration().uiMode &
-                        Configuration.UI_MODE_NIGHT_MASK;
-        switch (nightModeFlags) {
-            case Configuration.UI_MODE_NIGHT_YES:
-                activity.setTheme(R.style.AppThemeDark_NoActionBar);
-                break;
-
-            case Configuration.UI_MODE_NIGHT_NO:
-                activity.setTheme(R.style.AppThemeLight_NoActionBar);
-                break;
-
-            case Configuration.UI_MODE_NIGHT_UNDEFINED:
-                setCustomTheme(activity);
-                break;
-        }
+//        int nightModeFlags =
+//                activity.getResources().getConfiguration().uiMode &
+//                        Configuration.UI_MODE_NIGHT_MASK;
+//        switch (nightModeFlags) {
+//            case Configuration.UI_MODE_NIGHT_YES:
+//                activity.setTheme(R.style.AppThemeDark_NoActionBar);
+//                break;
+//
+//            case Configuration.UI_MODE_NIGHT_NO:
+//                activity.setTheme(R.style.AppThemeLight_NoActionBar);
+//                break;
+//
+//            case Configuration.UI_MODE_NIGHT_UNDEFINED:
+//                setCustomTheme(activity);
+//                break;
+//        }
+        setCustomTheme(activity);
     }
 
    private static void setCustomTheme(Activity activity){
