@@ -24,6 +24,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.4"
             android:gravity="center|start"
+            android:textColor="?attr/colorMainPageText"
             android:text="Best Score"
             />
         <TextView
@@ -34,6 +35,7 @@
             android:gravity="end|center"
             android:text="0"
             android:textStyle="bold"
+            android:textColor="?attr/colorMainPageText"
             android:padding="15dp"/>
 
     </LinearLayout>
@@ -54,6 +56,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.4"
             android:gravity="center|start"
+            android:textColor="?attr/colorMainPageText"
             android:text="Average Score"
             />
         <TextView
@@ -64,6 +67,7 @@
             android:gravity="end|center"
             android:text="0"
             android:textStyle="bold"
+            android:textColor="?attr/colorMainPageText"
             android:padding="15dp"/>
 
     </LinearLayout>

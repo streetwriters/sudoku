@@ -52,7 +52,7 @@ public class Play extends UseGameState {
         }
 
         new GridLayout(context).getGrid().setOnTouchListener(null);
-        ((Activity) context).findViewById(R.id.pause_play).setVisibility(View.VISIBLE);
+        ((Activity) context).findViewById(R.id.pause_screen).setVisibility(View.VISIBLE);
         onPauseArray = solved;
     }
 
@@ -88,6 +88,6 @@ public class Play extends UseGameState {
         }
 
         ((Activity) context).findViewById(R.id.grid).setOnTouchListener(new GridOnClick());
-        ((Activity) context).findViewById(R.id.pause_play).setVisibility(View.GONE);
+        ((Activity) context).findViewById(R.id.pause_screen).setVisibility(View.GONE);
     }
 }

@@ -34,7 +34,6 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Easy"
             android:textColor="?colorScoreBoard"
             android:gravity="center_vertical"
             android:paddingLeft="20dp"/>
@@ -44,7 +43,6 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Mistakes:0/3"
             android:textColor="?colorScoreBoard"
             android:gravity="center"/>
 
@@ -53,7 +51,6 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="00:00:00"
             android:textColor="?colorScoreBoard"
             android:gravity="center_vertical"
             android:paddingLeft="60dp"

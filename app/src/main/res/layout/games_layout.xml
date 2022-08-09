@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="275dp"
@@ -24,7 +23,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.4"
             android:gravity="center|start"
-            android:textColor="?colorButtonText"
+            android:textColor="?attr/colorMainPageText"
             android:text="Games Started"
             />
         <TextView
@@ -34,7 +33,7 @@
             android:layout_weight="0.4"
             android:gravity="end|center"
             android:text="0"
-            android:textColor="?colorButtonText"
+            android:textColor="?attr/colorMainPageText"
             android:textStyle="bold"
             android:padding="15dp"/>
 
@@ -56,7 +55,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:textColor="?colorButtonText"
+            android:textColor="?attr/colorMainPageText"
             android:gravity="center|start"
             android:text="Games Won"
             />
@@ -65,7 +64,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:textColor="?colorButtonText"
+            android:textColor="?attr/colorMainPageText"
             android:gravity="end|center"
             android:text="0"
             android:textStyle="bold"
@@ -88,7 +87,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:textColor="?colorButtonText"
+            android:textColor="?attr/colorMainPageText"
             android:gravity="center|start"
             android:text="Win Rate"
             />
@@ -99,7 +98,7 @@
             android:layout_weight="0.4"
             android:gravity="end|center"
             android:text="0"
-            android:textColor="?colorButtonText"
+            android:textColor="?attr/colorMainPageText"
             android:textStyle="bold"
             android:padding="15dp"/>
 
@@ -120,7 +119,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:textColor="?colorButtonText"
+            android:textColor="?attr/colorMainPageText"
             android:gravity="center|start"
             android:text="Win Rate This Week"
             />
@@ -130,7 +129,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.4"
             android:gravity="end|center"
-            android:textColor="?colorButtonText"
+            android:textColor="?attr/colorMainPageText"
             android:text="0"
             android:textStyle="bold"
             android:padding="15dp"/>

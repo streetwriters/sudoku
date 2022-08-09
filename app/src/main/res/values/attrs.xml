@@ -10,7 +10,7 @@
     <attr name="colorCellMargin" format="reference"/>
     <attr name="colorReverseAccent" format="reference"/>
     <attr name="colorCalenderDisabledText" format="reference"/>
-    <attr name="colorButtonText" format="reference"/>
+    <attr name="colorMainPageText" format="reference"/>
     <attr name="colorContainerBorder" format="reference"/>
     <attr name="customStyle" format="reference"></attr>
 

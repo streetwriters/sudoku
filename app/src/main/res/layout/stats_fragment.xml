@@ -18,7 +18,7 @@
                 android:layout_margin="10dp"
                 android:text="Games"
                 android:textSize="20dp"
-                android:textColor="?colorButtonText"/>
+                android:textColor="?attr/colorMainPageText"/>
         <include layout="@layout/games_layout" />
             <TextView
                 android:layout_width="match_parent"
@@ -26,7 +26,7 @@
                 android:layout_margin="10dp"
                 android:text="Time"
                 android:textSize="20dp"
-                android:textColor="?colorButtonText"/>
+                android:textColor="?attr/colorMainPageText"/>
         <include layout="@layout/time_layout" />
             <TextView
                 android:layout_width="match_parent"
@@ -34,7 +34,7 @@
                 android:layout_margin="10dp"
                 android:text="Scores"
                 android:textSize="20dp"
-                android:textColor="?colorButtonText"/>
+                android:textColor="?attr/colorMainPageText"/>
         <include layout="@layout/scores_layout" />
             <TextView
                 android:layout_width="match_parent"
@@ -42,7 +42,7 @@
                 android:layout_margin="10dp"
                 android:text="Streaks"
                 android:textSize="20dp"
-                android:textColor="?colorButtonText"/>
+                android:textColor="?attr/colorMainPageText"/>
         <include layout="@layout/streak_layout"/>
             <Button
                 android:layout_width="wrap_content"
@@ -61,8 +61,5 @@
             </LinearLayout>
 
         </LinearLayout>
-
-
-
     </ScrollView>
 </LinearLayout>

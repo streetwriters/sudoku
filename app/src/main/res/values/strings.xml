@@ -3,9 +3,7 @@
     <string name="title_activity_main">Sudoku</string>
 
 
-    <!-- test ads-->
-    <string name="banner_ad">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="reward_video">ca-app-pub-3940256099942544/5224354917</string>
+
 
     <!--Game difficulty-->
     <string name="easy">Easy</string>

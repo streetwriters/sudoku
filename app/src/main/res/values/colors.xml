@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#F7835E</color>
+    <color name="colorPrimaryDark">#F39476</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-    <color name="cellFixedSelectedLight">#979696</color>
-    <color name="cellFixedSelectedDark">#979696</color>
     <color name="error">#FF0000</color>
-    <color name="gray">#737373</color>
-    <color name="mediumGray">#979696</color>
-    <color name="lightGray">#f7f7f7</color>
-    <color name="boxMargins">#9C9B9B</color>
-    <color name="cellMarginLight">#9B7C7B7B</color>
-
-    <color name="colorPrimaryDark">#F39476</color>
-    <color name="dark">#3B374E</color>
-    <color name="colorAccentDark">#FFFFFF</color>
-    <color name="darkGray">#5B576A</color>
-    <color name="darkLightGray">#807E8C</color>
-    <color name="darkLightGrayVariant">#737080</color>
-
+    <color name="dark_gray03">#3B374E</color>
+    <color name="dark_gray02">#5B576A</color>
+    <color name="dark_gray01">#9B7C7B7B</color>
+    <color name="gray05">#807E8C</color>
+    <color name="gray04">#737373</color>
+    <color name="gray03">#737080</color>
+    <color name="gray02">#979696</color>
+    <color name="gray01">#9C9B9B</color>
+    <color name="light_gray01">#DBD9D9</color>
+    <color name="light_gray02">#E9E9E9</color>
+    <color name="light_gray03">#f7f7f7</color>
 </resources>

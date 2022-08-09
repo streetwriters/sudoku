@@ -6,47 +6,44 @@
     <item name="colorReverseAccent">@color/white</item>
     <item name="colorBackground">@color/colorPrimary</item>
     <item name="colorScoreBoard">@color/white</item>
-    <item name="colorButtonMainPage">@color/lightGray</item>
+    <item name="colorButtonMainPage">@color/light_gray02</item>
     <item name="colorCellUnselected">@color/white</item>
-    <item name="colorCellFixed">@color/lightGray</item>
-    <item name="colorCellFixedSelected">@color/cellFixedSelectedLight</item>
-    <item name="colorGridSelected">@color/gray</item>
+    <item name="colorCellFixed">@color/light_gray02</item>
+    <item name="colorCellFixedSelected">@color/gray02</item>
+    <item name="colorGridSelected">@color/light_gray01</item>
+
     <item name="colorError">@color/error</item>
-    <item name="colorCellMargin">@color/cellMarginLight</item>
-    <item name="colorCalenderDisabledText">@color/darkLightGray</item>
-    <item name="colorButtonText">@color/gray</item>
-    <item name="colorContainerBorder">@color/lightGray</item>
-    <item name="colorTertiary">@color/gray</item>
-    <item name="colorOnTertiary">@color/lightGray</item>
+    <item name="colorCellMargin">@color/dark_gray01</item>
+    <item name="colorCalenderDisabledText">@color/gray02</item>//change
+    <item name="colorMainPageText">@color/gray04</item>
+    <item name="colorContainerBorder">@color/light_gray03</item>
   </style>
 
   <style name="AppThemeDark" parent="Theme.AppCompat.Light.DarkActionBar">
     <item name="colorPrimary">@color/colorPrimaryDark</item>
-    <item name="colorSecondary">@color/dark</item>
+    <item name="colorSecondary">@color/dark_gray03</item>
     <item name="colorAccent">@color/white</item>
     <item name="colorReverseAccent">@color/black</item>
-    <item name="colorBackground">@color/dark</item>
+    <item name="colorBackground">@color/dark_gray03</item>
     <item name="colorScoreBoard">@color/white</item>
-    <item name="colorButtonMainPage">@color/darkGray</item>
-    <item name="colorCellUnselected">@color/darkGray</item>
-    <item name="colorCellFixed">@color/darkLightGrayVariant</item>
-    <item name="colorCellFixedSelected">@color/cellFixedSelectedDark</item>
-    <item name="colorGridSelected">@color/darkLightGray</item>
+    <item name="colorButtonMainPage">@color/dark_gray02</item>
+    <item name="colorCellUnselected">@color/dark_gray02</item>
+    <item name="colorCellFixed">@color/gray03</item>
+    <item name="colorCellFixedSelected">@color/gray02</item>
+    <item name="colorGridSelected">@color/gray05</item>
     <item name="colorError">@color/error</item>
-    <item name="colorCellMargin">@color/dark</item>
-    <item name="colorCalenderDisabledText">@color/mediumGray</item>
-    <item name="colorButtonText">@color/mediumGray</item>
-    <item name="android:colorBackground">@color/dark</item>
+    <item name="colorCellMargin">@color/dark_gray03</item>
+    <item name="colorCalenderDisabledText">@color/gray02</item>
+    <item name="colorMainPageText">@color/gray02</item>
+    <item name="android:colorBackground">@color/dark_gray03</item>
     <item name="android:textColorPrimary">@color/white</item>
-    <item name="android:textColorSecondary">@color/cellFixedSelectedDark</item>
-    <item name="colorContainerBorder">@color/gray</item>
+    <item name="android:textColorSecondary">@color/gray02</item>
+    <item name="colorContainerBorder">@color/gray04</item>
 
-    <item name="android:background">@color/dark</item>
+    <item name="android:background">@color/dark_gray03</item>
 
 
 
-    <item name="colorTertiary">@color/darkLightGray</item>
-    <item name="colorOnTertiary">@color/darkLightGrayVariant</item>
   </style>
 
   <style name="AppThemeLight.NoActionBar">

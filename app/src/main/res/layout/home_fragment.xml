@@ -75,7 +75,7 @@
             android:layout_marginEnd="30dp"
             android:background="@drawable/main_button"
             android:text="Rate our app"
-            android:textColor="?colorButtonText"
+            android:textColor="?attr/colorMainPageText"
             android:textSize="16dp" />
     </LinearLayout>
 

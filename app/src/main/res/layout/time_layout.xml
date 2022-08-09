@@ -24,6 +24,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.4"
             android:gravity="center|start"
+            android:textColor="?attr/colorMainPageText"
             android:text="Best Time"
             />
         <TextView
@@ -32,6 +33,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.4"
             android:gravity="end|center"
+            android:textColor="?attr/colorMainPageText"
             android:text="0"
             android:textStyle="bold"
             android:padding="15dp"/>
@@ -42,6 +44,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="horizontal"
+        android:textColor="?attr/colorMainPageText"
         android:weightSum="1">
         <ImageView
             android:layout_width="0dp"
@@ -54,6 +57,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.4"
             android:gravity="center|start"
+            android:textColor="?attr/colorMainPageText"
             android:text="Average Time"
             />
         <TextView
@@ -64,6 +68,7 @@
             android:gravity="center|end"
             android:text="0"
             android:textStyle="bold"
+            android:textColor="?attr/colorMainPageText"
             android:padding="15dp"/>
 
     </LinearLayout>

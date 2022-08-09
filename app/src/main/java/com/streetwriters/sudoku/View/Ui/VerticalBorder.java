@@ -9,7 +9,7 @@ import com.streetwriters.sudoku.R;
 public class VerticalBorder extends VerticalLayout{
     public VerticalBorder(Context context) {
         super(context);
-        setBackgroundColor(getResources().getColor(R.color.boxMargins));
+        setBackgroundColor(getResources().getColor(R.color.gray01));
         setParameters(0, LinearLayout.LayoutParams.MATCH_PARENT,0.025f);
     }
 

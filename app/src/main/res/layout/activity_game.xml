@@ -6,15 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".Activities.GameActivity">
 
-
-
     <include layout="@layout/content_game" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
-        android:id="@+id/pause_play"
+        android:id="@+id/pause_screen"
         android:background="#FFFFFF"
         android:alpha="0.5"
         android:clickable="true"
@@ -30,19 +28,4 @@
             />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
-<!--    <com.google.android.gms.ads.AdView-->
-<!--        xmlns:ads="http://schemas.android.com/apk/res-auto"-->
-<!--        android:id="@+id/adView"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        ads:adSize="BANNER"-->
-<!--        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"-->
-<!--        android:layout_gravity="bottom|center">-->
-
-<!--    </com.google.android.gms.ads.AdView>-->
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
