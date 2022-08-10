@@ -44,13 +44,13 @@
                 android:textSize="@dimen/text_size_title_stats"
                 android:textColor="?attr/colorMainPageText"/>
         <include layout="@layout/streak_layout"/>
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="RESET STATISTICS"
                 android:layout_gravity="center"
                 android:textSize="@dimen/text_size_button_reset_stats"
-                android:textColor="#FFF"
+                android:textColor="?colorPrimary"
                 android:layout_margin="10dp"
                 android:background="?android:attr/selectableItemBackground"/>
 
