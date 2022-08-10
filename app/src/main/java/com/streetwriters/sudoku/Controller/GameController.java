@@ -20,7 +20,6 @@ import com.streetwriters.sudoku.View.Ui.BottomLayout;
 
 public class GameController extends UseGameState {
     public Activity activity;
-    private int GRID_ID = 100000;
     GameState gameState = GameState.getInstance();
 
     public GameController(Activity activity) {

@@ -69,14 +69,16 @@ public class GameActivity extends AppCompatActivity {
         if (id == R.id.option_play_pause) {
          new Sounds().playSound(this);
             if (sudukoTimer.timer) {
-                sudukoTimer.T.cancel();
-                sudukoTimer.timer = false;
-                pauseAndPlay.onPause();
-                item.setIcon(R.drawable.ic_play);
+//                sudukoTimer.T.cancel();
+//                sudukoTimer.timer = false;
+//                pauseAndPlay.onPause();
+//                item.setIcon(R.drawable.ic_play);
+                pause(item);
             } else {
-                sudukoTimer.startTimer(this);
-                pauseAndPlay.onResume();
-                item.setIcon(R.drawable.ic_pause);
+//                sudukoTimer.startTimer(this);
+//                pauseAndPlay.onResume();
+//                item.setIcon(R.drawable.ic_pause);
+                play(item);
             }
         } else if(id==R.id.menu_help){
            startActivity(new Intent(this,Help.class));
@@ -119,6 +121,23 @@ public class GameActivity extends AppCompatActivity {
                 "mistakes: "+ (gameState.getMistakes()<3));
         if (!gameState.isGameFinished() && gameState.getMistakes() < 3) {
             new LoadGameState(this).saveGame();
+            Toolbar toolbar = findViewById(R.id.toolbar);
+            Menu menu = toolbar.getMenu();
+            MenuItem menuItem = menu.findItem(R.id.option_play_pause);
+            pause(menuItem);
         }
+    }
+
+    private void pause(MenuItem item){
+        sudukoTimer.T.cancel();
+        sudukoTimer.timer = false;
+        pauseAndPlay.onPause();
+        item.setIcon(R.drawable.ic_play);
+    }
+
+    private void play(MenuItem item){
+        sudukoTimer.startTimer(this);
+        pauseAndPlay.onResume();
+        item.setIcon(R.drawable.ic_pause);
     }
 }
