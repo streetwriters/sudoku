@@ -16,22 +16,22 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.2"
+            android:layout_weight="@dimen/weight_game_layout_image"
             android:padding="20dp"
             android:src="@drawable/ic_best_time"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.4"
+            android:layout_weight="@dimen/weight_game_layout_text"
             android:gravity="center|start"
             android:textColor="?attr/colorMainPageText"
-            android:text="Best Time"
+            android:text="@string/best_time"
             />
         <TextView
             android:id="@+id/best_time_stat"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.4"
+            android:layout_weight="@dimen/weight_game_layout_text"
             android:gravity="end|center"
             android:textColor="?attr/colorMainPageText"
             android:text="0"
@@ -49,22 +49,22 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.2"
+            android:layout_weight="@dimen/weight_game_layout_image"
             android:padding="20dp"
             android:src="@drawable/ic_average_time" />
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.4"
+            android:layout_weight="@dimen/weight_game_layout_text"
             android:gravity="center|start"
             android:textColor="?attr/colorMainPageText"
-            android:text="Average Time"
+            android:text="@string/average_time"
             />
         <TextView
             android:id="@+id/average_time_stat"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.4"
+            android:layout_weight="@dimen/weight_game_layout_text"
             android:gravity="center|end"
             android:text="0"
             android:textStyle="bold"

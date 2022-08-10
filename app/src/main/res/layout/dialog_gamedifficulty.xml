@@ -7,19 +7,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="?colorSecondary"
-        android:text="EASY"/>
+        android:text="@string/easy"/>
     <Button
         android:id="@+id/medium_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="?colorSecondary"
-        android:text="MEDIUM"/>
+        android:text="@string/medium"/>
     <Button
         android:id="@+id/hard_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="?colorSecondary"
-        android:text="HARD"/>
-
-
+        android:text="@string/hard"/>
 </LinearLayout>

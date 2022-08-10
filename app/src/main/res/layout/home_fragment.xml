@@ -47,36 +47,35 @@
             android:id="@+id/main_new_game"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginStart="@dimen/margin_horizontal_home_button"
+            android:layout_marginEnd="@dimen/margin_horizontal_home_button"
             android:background="@drawable/main_button_accent"
-            android:text="NEW GAME"
+            android:text="@string/text_new_game_home"
             android:textColor="@color/white"
-            android:textSize="16dp" />
+            android:textSize="@dimen/text_size_home_button" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/main_resume_game"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginStart="@dimen/margin_horizontal_home_button"
+            android:layout_marginTop="@dimen/margin_top_home_button"
+            android:layout_marginEnd="@dimen/margin_horizontal_home_button"
             android:background="@drawable/main_button"
-            android:text="Resume game"
+            android:text="@string/text_resume_game"
             android:textColor="@color/colorPrimary"
-            android:textSize="16dp" />
+            android:textSize="@dimen/text_size_home_button" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/main_rate_us"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginStart="@dimen/margin_horizontal_home_button"
+            android:layout_marginTop="@dimen/margin_top_home_button"
+            android:layout_marginEnd="@dimen/margin_horizontal_home_button"
             android:background="@drawable/main_button"
-            android:text="Rate our app"
+            android:text="@string/text_rate_app"
             android:textColor="?attr/colorMainPageText"
-            android:textSize="16dp" />
+            android:textSize="@dimen/text_size_home_button" />
     </LinearLayout>
-
 </LinearLayout>

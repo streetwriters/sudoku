@@ -4,51 +4,51 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="20dp"
+    android:padding="@dimen/padding_dialog_box"
     android:background="?colorBackground"
     android:id="@+id/dialog_view">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Game Over"
+        android:text="@string/title_game_completed"
         android:textStyle="bold"
         android:textColor="#FFF"
-        android:textSize="20dp"
-        android:layout_marginBottom="10dp"/>
+        android:textSize="@dimen/text_size_dialog_title"
+        android:layout_marginBottom="@dimen/margin_dialog_bottom"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#FFF"
-        android:layout_marginBottom="10dp"
-        android:textSize="17dp"
-        android:text="You have made three mistakes and lost this game."/>
+        android:layout_marginBottom="@dimen/margin_dialog_bottom"
+        android:textSize="@dimen/text_size_dialog_description"
+        android:text="@string/description_game_completed"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <Button
-            android:id="@+id/second_chance"
+            android:id="@+id/game_won_rate_us"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:layout_marginStart="25dp"
-            android:layout_marginEnd="25dp"
-            android:text="Second Chance"
+            android:layout_marginStart="@dimen/margin_dialog_horizontal_1"
+            android:layout_marginEnd="@dimen/margin_dialog_horizontal_1"
+            android:text="@string/text_rate_us"
             android:backgroundTint="#FFF"
             android:textColor="@color/colorPrimary"
-            android:drawableRight="@drawable/ic_advertising"
-
             />
         <Button
-            android:id="@+id/new_game"
+            android:id="@+id/game_won_main_page"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:layout_marginStart="25dp"
-            android:layout_marginEnd="25dp"
-            android:text="NEW GAME"
+            android:layout_marginStart="@dimen/margin_dialog_horizontal_2"
+            android:layout_marginEnd="@dimen/margin_dialog_horizontal_2"
+            android:text="@string/text_go_to_main"
             android:backgroundTint="#FFF"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="@color/colorPrimary"
+            android:drawableEnd="@drawable/ic_advertising"
+            />
     </LinearLayout>
 
 </LinearLayout>

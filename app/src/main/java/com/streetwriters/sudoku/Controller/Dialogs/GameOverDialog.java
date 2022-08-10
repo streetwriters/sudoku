@@ -18,7 +18,7 @@ public class GameOverDialog extends DialogHelper {
     }
 
     public void Show() {
-        setLayout(R.layout.dialog_layout);
+        setLayout(R.layout.dialog_gameover);
         setCustomView();
         setCancel(false);
         this.dialog = getDialog();

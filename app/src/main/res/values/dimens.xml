@@ -3,4 +3,40 @@
     <dimen name="layout_height">0dp</dimen>
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+
+    <dimen name="sizeCellMargin">0.25dp</dimen>
+    <dimen name="alpha_pause_screen">0.5</dimen>
+    <dimen name="elevation_app_bar_layout">0dp</dimen>
+
+    <dimen name="text_size_calender_day">16sp</dimen>
+
+    <dimen name="height_scoreboard">24dp</dimen>
+    <dimen name="padding_scoreboard">20dp</dimen>
+
+    <dimen name="padding_dialog_box">20dp</dimen>
+    <dimen name="text_size_dialog_title">30sp</dimen>
+    <dimen name="text_size_dialog_description">25sp</dimen>
+    <dimen name="margin_dialog_bottom">10dp</dimen>
+    <dimen name="margin_dialog_horizontal_1">100</dimen>
+    <dimen name="margin_dialog_horizontal_2">25</dimen>
+    <dimen name="text_size_dialog_description_game_over">17sp</dimen>
+
+    <dimen name="padding_game_layout_image">20dp</dimen>
+    <dimen name="padding_game_layout_text">15dp</dimen>
+    <dimen name="weight_game_layout_image">0.2</dimen>
+    <dimen name="weight_game_layout_text">0.4</dimen>
+    <dimen name="text_size_title_stats">20sp</dimen>
+    <dimen name="text_size_button_reset_stats">18sp</dimen>
+
+    <dimen name="text_size_home_button">16sp</dimen>
+    <dimen name="margin_horizontal_home_button">30dp</dimen>
+    <dimen name="margin_top_home_button">20dp</dimen>
+
+    <dimen name="weight_top_layout_trophy">0.55</dimen>
+    <dimen name="weight_top_layout_text_view">0.15</dimen>
+    <dimen name="weight_top_layout_image">0.7</dimen>
+    <dimen name="margin_button_trophy">30dp</dimen>
+
+
+
 </resources>

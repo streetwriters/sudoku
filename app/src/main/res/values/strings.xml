@@ -2,6 +2,55 @@
     <string name="app_name">Sudoku</string>
     <string name="title_activity_main">Sudoku</string>
 
+    <!--main page trophy-->
+    <string name="text_trophy_play">PLAY</string>
+
+
+    <!--main page home-->
+    <string name="text_new_game_home">NEW GAME</string>
+    <string name="text_resume_game">"Resume game</string>
+    <string name="text_rate_app">Rate our app</string>
+
+
+
+    <!--dialog game won -->
+    <string name="title_game_completed">Game Completed</string>
+    <string name="description_game_completed">Congratulations!!!\nyou have won the game.</string>
+    <string name="text_rate_us">Rate our App</string>
+    <string name="text_go_to_main">Back to main Page</string>
+
+    <!--dialog game over-->
+    <string name="title_game_over">Game Over</string>
+    <string name="description_game_over">You have made three mistakes and lost this game.</string>
+    <string name="text_second_chance">Second Chance</string>
+    <string name="text_new_game_dialog">NEW GAME</string>
+
+    <!-- stats layout-->
+    <!---main-->
+    <string name="title_stats_games">Games</string>
+    <string name="title_stats_time">Time</string>
+    <string name="title_stats_score">Scores</string>
+    <string name="title_stats_streaks">Streaks</string>
+    <string name="text_button_reset_stats">RESET STATISTICS</string>
+
+    <!--streak-->
+    <string name="current_win_streak">Current Win Streak</string>
+    <string name="best_win_streak">Best Win Streak</string>
+    <string name="wins_with_no_mistakes">Wins With No Mistakes</string>
+
+    <!--score-->
+    <string name="best_score">Best Score</string>
+    <string name="average_score">Average Score</string>
+
+    <!--games-->
+    <string name="games_started">Games Started</string>
+    <string name="games_won">Games Won</string>
+    <string name="win_rate">Win Rate</string>
+    <string name="win_rate_this_week">Win Rate This Week</string>
+
+    <!--time-->
+    <string name="average_time">Average Time</string>
+    <string name="best_time">Best Time</string>
 
 
 

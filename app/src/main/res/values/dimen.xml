@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-  <dimen name="sizeCellMargin">0.25dp</dimen>
-  <dimen name="pause_fade">0.5</dimen>
-</resources>

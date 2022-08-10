@@ -15,27 +15,27 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:padding="20dp"
+            android:layout_weight="@dimen/weight_game_layout_image"
+            android:padding="@dimen/padding_game_layout_image"
             android:src="@drawable/ic_sudoku_icon"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.4"
+            android:layout_weight="@dimen/weight_game_layout_text"
             android:gravity="center|start"
             android:textColor="?attr/colorMainPageText"
-            android:text="Games Started"
+            android:text="@string/games_started"
             />
         <TextView
             android:id="@+id/games_started_stat"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.4"
+            android:layout_weight="@dimen/weight_game_layout_text"
             android:gravity="end|center"
             android:text="0"
             android:textColor="?attr/colorMainPageText"
             android:textStyle="bold"
-            android:padding="15dp"/>
+            android:padding="@dimen/padding_game_layout_text"/>
 
     </LinearLayout>
     <LinearLayout
@@ -47,28 +47,27 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:padding="20dp"
+            android:layout_weight="@dimen/weight_game_layout_image"
+            android:padding="@dimen/padding_game_layout_image"
             android:src="@drawable/ic_crown"
             android:scaleType="centerInside"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.4"
+            android:layout_weight="@dimen/weight_game_layout_text"
             android:textColor="?attr/colorMainPageText"
             android:gravity="center|start"
-            android:text="Games Won"
+            android:text="@string/games_won"
             />
         <TextView
             android:id="@+id/games_won_stat"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.4"
+            android:layout_weight="@dimen/weight_game_layout_text"
             android:textColor="?attr/colorMainPageText"
             android:gravity="end|center"
-            android:text="0"
             android:textStyle="bold"
-            android:padding="15dp"/>
+            android:padding="@dimen/padding_game_layout_text"/>
 
     </LinearLayout>
     <LinearLayout
@@ -80,27 +79,26 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:padding="20dp"
+            android:layout_weight="@dimen/weight_game_layout_image"
+            android:padding="@dimen/padding_game_layout_image"
             android:src="@drawable/ic_flag_waving"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.4"
+            android:layout_weight="@dimen/weight_game_layout_text"
             android:textColor="?attr/colorMainPageText"
             android:gravity="center|start"
-            android:text="Win Rate"
+            android:text="@string/win_rate"
             />
         <TextView
             android:id="@+id/win_rate_stat"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.4"
+            android:layout_weight="@dimen/weight_game_layout_text"
             android:gravity="end|center"
-            android:text="0"
             android:textColor="?attr/colorMainPageText"
             android:textStyle="bold"
-            android:padding="15dp"/>
+            android:padding="@dimen/padding_game_layout_text"/>
 
     </LinearLayout>
     <LinearLayout
@@ -112,28 +110,26 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:padding="20dp"
+            android:layout_weight="@dimen/weight_game_layout_image"
+            android:padding="@dimen/padding_game_layout_image"
             android:src="@drawable/ic_bar_chart"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.4"
+            android:layout_weight="@dimen/weight_game_layout_text"
             android:textColor="?attr/colorMainPageText"
             android:gravity="center|start"
-            android:text="Win Rate This Week"
+            android:text="@string/win_rate_this_week"
             />
         <TextView
             android:id="@+id/winrate_weekly_stat"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.4"
+            android:layout_weight="@dimen/weight_game_layout_text"
             android:gravity="end|center"
             android:textColor="?attr/colorMainPageText"
-            android:text="0"
             android:textStyle="bold"
-            android:padding="15dp"/>
+            android:padding="@dimen/padding_game_layout_text"/>
 
     </LinearLayout>
-
 </LinearLayout>

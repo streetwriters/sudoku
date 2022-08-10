@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppThemeLight.AppBarOverlay"
-        app:elevation="0dp">
+        app:elevation="@dimen/elevation_app_bar_layout">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -25,9 +25,10 @@
     <LinearLayout
         android:id="@+id/top_layout"
         android:layout_width="match_parent"
-        android:layout_height="24dp"
+        android:layout_height="@dimen/height_scoreboard"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/padding_scoreboard">
 
         <TextView
             android:id="@+id/difficulty"
@@ -36,7 +37,7 @@
             android:layout_weight="1"
             android:textColor="?colorScoreBoard"
             android:gravity="center_vertical"
-            android:paddingLeft="20dp"/>
+            />
 
         <TextView
             android:id="@+id/mistakes"
@@ -52,11 +53,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textColor="?colorScoreBoard"
-            android:gravity="center_vertical"
-            android:paddingLeft="60dp"
+            android:textAlignment="textEnd"
             />
-
-
     </LinearLayout>
 
 </LinearLayout>

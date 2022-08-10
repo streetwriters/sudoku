@@ -15,7 +15,7 @@ public class DifficultyDialog extends DialogHelper {
     }
 
     public void Show() {
-        setLayout(R.layout.difficult_options);
+        setLayout(R.layout.dialog_gamedifficulty);
 
         setButton(R.id.easy_dialog, v -> {
             Intent intent = new Intent(activity, GameActivity.class);

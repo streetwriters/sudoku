@@ -16,27 +16,26 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:padding="20dp"
+            android:layout_weight="@dimen/weight_game_layout_image"
+            android:padding="@dimen/padding_game_layout_image"
             android:src="@drawable/ic_best_score"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.4"
+            android:layout_weight="@dimen/weight_game_layout_text"
             android:gravity="center|start"
             android:textColor="?attr/colorMainPageText"
-            android:text="Best Score"
+            android:text="@string/best_score"
             />
         <TextView
             android:id="@+id/best_score_stat"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.4"
+            android:layout_weight="@dimen/weight_game_layout_text"
             android:gravity="end|center"
-            android:text="0"
             android:textStyle="bold"
             android:textColor="?attr/colorMainPageText"
-            android:padding="15dp"/>
+            android:padding="@dimen/padding_game_layout_text"/>
 
     </LinearLayout>
     <LinearLayout
@@ -48,27 +47,27 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:padding="20dp"
+            android:layout_weight="@dimen/weight_game_layout_image"
+            android:padding="@dimen/padding_game_layout_image"
             android:src="@drawable/ic_star_black_24dp" />
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.4"
+            android:layout_weight="@dimen/weight_game_layout_text"
             android:gravity="center|start"
             android:textColor="?attr/colorMainPageText"
-            android:text="Average Score"
+            android:text="@string/average_score"
             />
         <TextView
             android:id="@+id/average_score_stat"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.4"
+            android:layout_weight="@dimen/weight_game_layout_text"
             android:gravity="end|center"
             android:text="0"
             android:textStyle="bold"
             android:textColor="?attr/colorMainPageText"
-            android:padding="15dp"/>
+            android:padding="@dimen/padding_game_layout_text"/>
 
     </LinearLayout>
 </LinearLayout>

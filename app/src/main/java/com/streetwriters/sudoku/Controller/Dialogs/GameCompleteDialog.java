@@ -25,7 +25,7 @@ public class GameCompleteDialog extends DialogHelper {
     }
 
     public void Show() {
-        setLayout(R.layout.game_won);
+        setLayout(R.layout.dialog_game_won);
         gameState.setGameFinished(true);
 
 

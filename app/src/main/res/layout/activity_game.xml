@@ -13,8 +13,8 @@
         android:layout_height="match_parent"
         android:visibility="gone"
         android:id="@+id/pause_screen"
-        android:background="#FFFFFF"
-        android:alpha="0.5"
+        android:background="?colorSecondary"
+        android:alpha="@dimen/alpha_pause_screen"
         android:clickable="true"
         android:focusable="true"
         android:layout_marginTop="?attr/actionBarSize"
@@ -24,7 +24,7 @@
             android:layout_height="match_parent"
             android:src="@drawable/ic_play"
             android:tint="@color/colorPrimary"
-            android:alpha="0.5"
+            android:alpha="@dimen/alpha_pause_screen"
             />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
