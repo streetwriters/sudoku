@@ -35,6 +35,25 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    sourceSets {
+        main {
+            res.srcDirs =
+                    [
+                            'src/main/res/layouts/game-activity',
+                            'src/main/res/layouts/help-activity',
+                            'src/main/res/layouts/main-activity',
+                            'src/main/res/layouts/settings-activity',
+                            'src/main/res/layouts/main-fragments',
+                            'src/main/res/layouts/stats-layouts',
+                            'src/main/res/layouts/trophy-layouts',
+                            'src/main/res/layouts/dialogs',
+                            'src/main/res/layouts',
+                            'src/main/res'
+                    ]
+        }
+    }
+
     buildFeatures {
         viewBinding true
     }
