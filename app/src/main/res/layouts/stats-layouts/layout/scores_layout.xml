@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="137.5dp"
+    android:layout_margin="10dp"
+    android:background="@drawable/shadow_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="@dimen/weight_game_layout_image"
+            android:padding="@dimen/padding_game_layout_image"
+            android:src="@drawable/ic_best_score"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="@dimen/weight_game_layout_text"
+            android:gravity="center|start"
+            android:textColor="?attr/colorMainPageText"
+            android:text="@string/best_score"
+            />
+        <TextView
+            android:id="@+id/best_score_stat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="@dimen/weight_game_layout_text"
+            android:gravity="end|center"
+            android:textStyle="bold"
+            android:textColor="?attr/colorMainPageText"
+            android:padding="@dimen/padding_game_layout_text"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="@dimen/weight_game_layout_image"
+            android:padding="@dimen/padding_game_layout_image"
+            android:src="@drawable/ic_star_black_24dp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="@dimen/weight_game_layout_text"
+            android:gravity="center|start"
+            android:textColor="?attr/colorMainPageText"
+            android:text="@string/average_score"
+            />
+        <TextView
+            android:id="@+id/average_score_stat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="@dimen/weight_game_layout_text"
+            android:gravity="end|center"
+            android:text="0"
+            android:textStyle="bold"
+            android:textColor="?attr/colorMainPageText"
+            android:padding="@dimen/padding_game_layout_text"/>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:id="@+id/trophy_pic_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.55"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/month_of_calender"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.15"
+            android:textColor="?colorAccent"
+            android:textSize="18dp"/>
+
+        <ImageView
+            android:id="@+id/flag"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.7"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_trophy" />
+
+        <TextView
+            android:id="@+id/challenges_completed"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.15"
+            android:textColor="?colorAccent"/>
+
+    </LinearLayout>
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mcv_showOtherDates="decorated_disabled"
+        app:mcv_selectionColor="?colorPrimary"
+        app:mcv_tileHeight="20dp"
+        app:mcv_tileWidth="45dp"
+        app:mcv_weekDayTextAppearance="@style/CustomWeekTextAppearance"
+        app:mcv_dateTextAppearance="@style/CustomTextAppearance"
+        android:visibility="gone"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/trophy_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/main_button_accent"
+        android:text="@string/text_trophy_play"
+        android:textColor="@color/white"
+        android:textSize="16dp" />
+</LinearLayout>
