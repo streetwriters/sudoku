@@ -1,6 +1,8 @@
 package com.streetwriters.sudoku.Functions.Utils.Singletons;
 
 import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
 
 import com.streetwriters.sudoku.Controller.Stats;
 import com.streetwriters.sudoku.Functions.InitializeArrays;
@@ -17,9 +19,15 @@ import test1.sudukoSolvedRiddle;
 public class LoadGameState {
     Activity activity;
     GameState gameState = GameState.getInstance();
+    Bundle savedInstanceState=null;
 
     public LoadGameState(Activity activity) {
         this.activity = activity;
+    }
+
+    public LoadGameState(Activity activity, Bundle savedInstanceState) {
+        this.activity = activity;
+        this.savedInstanceState = savedInstanceState;
     }
 
     public void game() {
@@ -39,12 +47,17 @@ public class LoadGameState {
                 setChallengeGameData();
                 break;
             case 5:
+            case 0:
                 loadSavedGame();
                 break;
+
         }
     }
 
     public int getGameDifficulty() {
+        if(savedInstanceState!=null){
+            return savedInstanceState.getInt("difficulty");
+        }
         return activity.getIntent().getIntExtra("difficulty", 0);
     }
 

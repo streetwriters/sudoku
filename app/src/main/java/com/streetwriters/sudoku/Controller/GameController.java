@@ -1,6 +1,7 @@
 package com.streetwriters.sudoku.Controller;
 
 import android.app.Activity;
+import android.os.Bundle;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.view.ContextThemeWrapper;
@@ -22,9 +23,9 @@ public class GameController extends UseGameState {
     public Activity activity;
     GameState gameState = GameState.getInstance();
 
-    public GameController(Activity activity) {
+    public GameController(Activity activity, Bundle savedInstanceState) {
         this.activity = activity;
-        new LoadGameState(activity).game();
+        new LoadGameState(activity,savedInstanceState).game();
         new TextLayout(activity).arrange();
         LinearLayout gameLayout = activity.findViewById(R.id.game_layout);
         gameLayout.addView(new GridLayout(activity).newArrangement());

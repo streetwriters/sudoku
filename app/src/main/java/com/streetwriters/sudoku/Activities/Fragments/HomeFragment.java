@@ -54,9 +54,6 @@ public class HomeFragment extends Fragment {
 
         mainGameBtn.setOnLongClickListener(view1 -> true);
 
-//        try {
-//            ResumePuzzle resumePuzzle = new Data().isResumeFilePresent();
-//            Log.d(HomeFragment.class.getSimpleName(), "onCreateView: "+resumePuzzle);
         AppCompatButton resumeBtn = view.findViewById(R.id.main_resume_game);
             resumeBtn.setVisibility(View.VISIBLE);
             resumeBtn.setOnClickListener(new View.OnClickListener() {
@@ -75,10 +72,6 @@ public class HomeFragment extends Fragment {
                     }
                 }
             });
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            resumeBtn.setVisibility(View.GONE);
-//        }
 
         AppCompatButton rateButton = view.findViewById(R.id.main_rate_us);
 

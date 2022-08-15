@@ -34,8 +34,6 @@ public class SudukoTimer {
                         new TextLayout(activity).setTimer(count);
 
                         gameState.setGameTimer(gameState.getGameTimer()+1);
-                        Log.d(SudukoTimer.class.getName(), "TIMER: "+gameState.getGameTimer());
-
                     }
                 });
             }

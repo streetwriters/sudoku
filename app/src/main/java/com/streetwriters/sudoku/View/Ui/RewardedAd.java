@@ -7,6 +7,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.streetwriters.sudoku.Activities.MainActivity;
+import com.streetwriters.sudoku.BuildConfig;
 import com.streetwriters.sudoku.Controller.OnClick.ButtonOnClick;
 import com.streetwriters.sudoku.Controller.Stats;
 import com.streetwriters.sudoku.Functions.FetchData.Data;
@@ -24,7 +25,7 @@ import com.unity3d.ads.UnityAdsShowOptions;
 
 public class RewardedAd  extends ButtonOnClick implements IUnityAdsInitializationListener {
     private String unityGameID = "4855805";
-    private Boolean testMode = false;
+    private Boolean testMode = BuildConfig.DEBUG;
     private String adUnitId = "Rewarded_Android";
     private Boolean isRewardedLoaded = false;
     Activity activity;

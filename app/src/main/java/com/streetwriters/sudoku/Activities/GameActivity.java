@@ -47,7 +47,7 @@ public class GameActivity extends AppCompatActivity {
         sudukoTimer = new SudukoTimer();
         sudukoTimer.startTimer(this);
 
-        gameController = new GameController(this);
+        gameController = new GameController(this,savedInstanceState);
 
           RewardedAd rewardedAd = new RewardedAd(this);
           gameState.setRewardedAd(rewardedAd);
@@ -115,6 +115,7 @@ public class GameActivity extends AppCompatActivity {
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putInt("difficulty",5);
         super.onSaveInstanceState(outState);
         Log.d(GameActivity.class.getSimpleName(), "onSaveInstanceState: " +
                 "isGameFinished: "+!gameState.isGameFinished()+
