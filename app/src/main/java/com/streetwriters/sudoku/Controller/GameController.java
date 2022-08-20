@@ -2,10 +2,12 @@ package com.streetwriters.sudoku.Controller;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.view.ContextThemeWrapper;
 
+import com.streetwriters.sudoku.Functions.Analytics;
 import com.streetwriters.sudoku.Functions.Utils.Singletons.LoadGameState;
 import com.streetwriters.sudoku.Functions.CheckErrors;
 import com.streetwriters.sudoku.Functions.Utils.Singletons.GameState;
@@ -33,6 +35,9 @@ public class GameController extends UseGameState {
         gameLayout.addView(bottomLayout);
         bottomLayout.addView(new EditPadLayout(activity).arrange());
         bottomLayout.addView(new NumPadLayout(activity).arrange());
+
+        new Analytics().execute("/sudoku/game");
+        //Log.d(GameController.class.getSimpleName(), "GameController: "+ );
 
         if (new LoadGameState(activity).getGameDifficulty()==5) { // ths should be moved to suduko views
             FillCells fillCells = new FillCells();

@@ -126,6 +126,13 @@ public class CellLayout {
         return !((Cell) cellView.findViewById(R.id.cell)).getText().equals("");
     }
 
+    public Boolean isCellRightlyFilled(){
+        if(isCellFilled()) {
+            return !isCellTextRed();
+        }else
+            return false;
+    }
+
     public Boolean isNoteFilled(int identifier) {
         Dimensions dimensions = new Dimensions();
         int id = dimensions.stringToId("note_" + identifier);

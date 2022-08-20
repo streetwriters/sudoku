@@ -73,26 +73,26 @@ public class EditPadOnClick extends ButtonOnClick implements View.OnClickListene
     }
 
     private void hint() {
-        //InitializeAds ads = new InitializeAds(context);
-        //ads.giveHint();
         if (!gameState.isTakingNotes()) {
             if (gameState.getActiveCellId() > -1) {
-                if (gameState.getHints() > 0) {
-                    Digits digits = new Dimensions().numberToDigits(gameState.getActiveCellId());
-                    setButtonVisibility(new CellLayout(context, gameState.getActiveCellId()));
-                    cellClick(gameState.getSolvedPuzzle()[digits.first()][digits.second()]);
-                    if (!isRunningTest()) {
-                        gameState.setHints(gameState.getHints() - 1);
+                CellLayout cellLayout = new CellLayout(context, gameState.getActiveCellId());
+                if (!cellLayout.isCellRightlyFilled())
+                    if (gameState.getHints() > 0) {
+                        Digits digits = new Dimensions().numberToDigits(gameState.getActiveCellId());
+                        setButtonVisibility(cellLayout);
+                        cellClick(gameState.getSolvedPuzzle()[digits.first()][digits.second()]);
+                        if (!isRunningTest()) {
+                            gameState.setHints(gameState.getHints() - 1);
+                            new EditPadLayout(context).setHintIcon(gameState.getHints());
+                            gameState.getRewardedAd().loadRewardedAd();
+                        }
+                    } else {
+                        gameState.getRewardedAd().displayRewardedAd();
+                        gameState.setAdTypeHint(true);
                         new EditPadLayout(context).setHintIcon(gameState.getHints());
-                        gameState.getRewardedAd().loadRewardedAd();
                     }
-                } else {
-                    gameState.getRewardedAd().displayRewardedAd();
-                    gameState.setAdTypeHint(true);
-                    new EditPadLayout(context).setHintIcon(gameState.getHints());
-                }
             }
-        } else{
+        } else {
             Toast.makeText(context, "Can't display hints when taking notes", Toast.LENGTH_SHORT).show();
         }
         // }

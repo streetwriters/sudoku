@@ -22,6 +22,7 @@ import androidx.fragment.app.Fragment;
 
 import com.streetwriters.sudoku.Activities.GameActivity;
 import com.streetwriters.sudoku.Activities.Help;
+import com.streetwriters.sudoku.Functions.Analytics;
 import com.streetwriters.sudoku.Functions.FetchData.Data;
 import com.streetwriters.sudoku.Functions.Objects.ResumePuzzle;
 import com.streetwriters.sudoku.R;
@@ -42,6 +43,8 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.home_fragment, container, false);
+
+        new Analytics().execute("/sudoku");
 
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("");
         LinearLayout linearLayout = view.findViewById(R.id.home_fragment);

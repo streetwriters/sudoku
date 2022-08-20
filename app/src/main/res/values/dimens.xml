@@ -17,8 +17,8 @@
     <dimen name="text_size_dialog_title">30sp</dimen>
     <dimen name="text_size_dialog_description">25sp</dimen>
     <dimen name="margin_dialog_bottom">10dp</dimen>
-    <dimen name="margin_dialog_horizontal_1">100</dimen>
-    <dimen name="margin_dialog_horizontal_2">25</dimen>
+    <dimen name="margin_dialog_horizontal_1">100dp</dimen>
+    <dimen name="margin_dialog_horizontal_2">25dp</dimen>
     <dimen name="text_size_dialog_description_game_over">17sp</dimen>
 
     <dimen name="padding_game_layout_image">20dp</dimen>
